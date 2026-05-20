@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Intake | BeyondData Intellab</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-heading); }
+        .form-control { width: 100%; padding: 12px; border: 1px solid rgba(0,98,255,0.15); border-radius: 6px; outline: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">BeyondData <span>Intellab</span></a> [cite: 301]
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li> [cite: 293]
+                <li><a href="programs.html">Programs</a></li> [cite: 294]
+                <li><a href="mentorship.html">Mentorship</a></li> [cite: 295]
+                <li><a href="opportunities.html">Opportunities</a></li> [cite: 298]
+                <li><a href="contact.html">Contact</a></li> [cite: 299]
+            </ul>
+            <a href="application.html" class="btn btn-primary active">Apply Now</a>
+        </div>
+    </nav>
+
+    <section class="section-padding">
+        <div class="container" style="max-width: 700px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 12px;">Ecosystem Intake Form</h1>
+                <p>Cohort 1 applications officially open <strong>May 25th, 2026</strong>. Submit early to secure selection matching.</p> [cite: 91]
+            </div>
+
+            <div class="card" style="border-top: 4px solid var(--accent-orange);">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label>Full Legal Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Primary Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Track Role</label>
+                        <select class="form-control">
+                            <option value="mentee">Apply as a Mentee</option> [cite: 8]
+                            <option value="mentor">Become a Mentor</option> [cite: 9]
+                            <option value="partner">Partner With Us</option> [cite: 10]
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Core Alignment Track</label>
+                        <select class="form-control">
+                            <option>Digital Beginner Pathway</option> [cite: 56]
+                            <option>Transitioning Graduate Pathway</option> [cite: 58]
+                            <option>Young Entrepreneur Pathway</option> [cite: 60]
+                            <option>Career Switcher Pathway</option> [cite: 62]
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Statement of Purpose & Alignment Motivation</label>
+                        <textarea class="form-control" rows="5" placeholder="Share your professional growth potential and program alignment objectives..." required></textarea> [cite: 137, 138]
+                    </div>
+                    <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 24px; color: var(--text-body);">
+                        🔒 By submitting, you acknowledge that selection processes prioritize active commitment, motivation indicators, and execution consistency. [cite: 135, 136]
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%; font-size: 1rem;">Submit Application Record</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--bg-dark); color: rgba(255,255,255,0.7); padding: 40px 0 30px 0;">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 BeyondData Intellab. Managed under BeyondData ICT framework.</p> [cite: 301]
+        </div>
+    </footer>
+</body>
+</html>
