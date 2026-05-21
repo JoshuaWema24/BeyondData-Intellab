@@ -4,72 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentorship | BeyondData Intellab</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">BeyondData <span>Intellab</span></a> [cite: 301]
-            <ul class="nav-links">
+            <a href="index.html" class="logo-block">
+                <div class="logo-icon">BD</div>
+                <div class="logo-text">BeyondData Intellab</div>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li> [cite: 293]
-                <li><a href="programs.html">Programs</a></li> [cite: 294]
-                <li><a href="mentorship.html" class="active">Mentorship</a></li> [cite: 295]
-                <li><a href="opportunities.html">Opportunities</a></li> [cite: 298]
-                <li><a href="contact.html">Contact</a></li> [cite: 299]
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="mentorship.html" class="active">Mentorship</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="application.html" class="btn btn-primary">Apply Now</a>
+
+            <div class="nav-actions">
+                <a href="application.html" class="btn-nav-apply">Apply Now</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <section class="section-padding" style="background: radial-gradient(circle at 10% 90%, var(--bg-light) 0%, #fff 100%);">
+    <!-- HEADER / INTRO -->
+    <section class="section-padding" style="background: radial-gradient(circle at 10% 90%, var(--bg-light) 0%, #FFFFFF 100%);">
         <div class="container grid-2">
             <div>
-                <h1 style="font-size: 2.8rem; margin-bottom: 20px;">Become a Mentor</h1> [cite: 198]
-                <p style="font-size: 1.1rem; margin-bottom: 32px;">Help shape Africa’s next generation of innovators, professionals, entrepreneurs, and digital leaders.</p> [cite: 200]
-                <a href="application.html?role=mentor" class="btn btn-accent">Apply as a Mentor</a> [cite: 209]
+                <h1 style="font-size: clamp(2.25rem, 5vw, 3rem);">Become a Mentor</h1>
+                <p style="font-size: 1.15rem; color: var(--text-body); margin-bottom: 32px;">
+                    Help shape Africa’s next generation of innovators, professionals, entrepreneurs, and digital leaders.
+                </p>
+                <a href="application.html?role=mentor" class="btn btn-pill-gradient">Apply as a Mentor</a>
             </div>
             <div class="card" style="border-top: 4px solid var(--blue-tech);">
-                <h4 style="margin-bottom: 16px;">As a mentor, you can:</h4> [cite: 201]
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-                    <li>🎯 Share industry knowledge & experiences</li> [cite: 202]
-                    <li>📈 Support structural youth career growth</li> [cite: 203]
-                    <li>💡 Guide innovation and venture projects</li> [cite: 204]
-                    <li>🌍 Expand professional networks across Africa</li> [cite: 205]
+                <h3 style="font-size: 1.35rem; margin-bottom: 16px;">What you will do as a mentor:</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-weight: 500;">
+                    <li>🎯 Share industry knowledge and core tech trends</li>
+                    <li>📈 Support career growth and professional accountability</li>
+                    <li>💡 Guide hands-on innovation and startup projects</li>
+                    <li>🤝 Expand your professional network across Africa</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
+    <!-- HOW MENTORSHIP WORKS -->
+    <section class="section-padding" style="background-color: var(--bg-light);">
         <div class="container">
-            <h2 class="section-title">How the Mentorship Program Works</h2> [cite: 187]
-            <p class="section-subtitle">A straightforward four-step dynamic matching system built for impact.</p>
+            <h2 class="section-title">How the Mentorship Program Works</h2>
+            <p class="section-subtitle">We seamlessly match learners, mentors, volunteers, and partners using a data-driven matching system.</p>
+            
             <div class="grid-4">
-                <div class="card">
-                    <h4 style="color: var(--accent-orange); margin-bottom: 8px;">Step 1: Apply</h4> [cite: 188]
-                    <p style="font-size: 0.9rem;">Learners, mentors, and partners submit credentials through the platform.</p> [cite: 189]
+                <div class="card" style="border-bottom: 4px solid var(--blue-tech);">
+                    <h4 style="margin-bottom: 8px;">Step 1 - Apply</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-body);">Learners, mentors, volunteers, and partners submit applications through the platform.</p>
                 </div>
-                <div class="card">
-                    <h4 style="color: var(--blue-tech); margin-bottom: 8px;">Step 2: Matching</h4> [cite: 190]
-                    <p style="font-size: 0.9rem;">Participants are structured based on tech goals, pathways, and tracks.</p> [cite: 191]
+                <div class="card" style="border-bottom: 4px solid var(--accent-orange);">
+                    <h4 style="margin-bottom: 8px;">Step 2 - Match</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-body);">Participants are matched based on interests, goals, experience, and mentorship tracks.</p>
                 </div>
-                <div class="card">
-                    <h4 style="color: var(--blue-corp); margin-bottom: 8px;">Step 3: Journey</h4> [cite: 192]
-                    <p style="font-size: 0.9rem;">Mentors guide mentees through clear execution and growth plans.</p> [cite: 193]
+                <div class="card" style="border-bottom: 4px solid #10B981;">
+                    <h4 style="margin-bottom: 8px;">Step 3 - Learn</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-body);">Mentors guide mentees through structured sessions, growth plans, and learning pathways.</p>
                 </div>
-                <div class="card">
-                    <h4 style="color: var(--text-heading); margin-bottom: 8px;">Step 4: Growth</h4> [cite: 194]
-                    <p style="font-size: 0.9rem;">Gain seamless entry to ecosystem workshops, internships, and networks.</p> [cite: 195]
+                <div class="card" style="border-bottom: 4px solid #8B5CF6;">
+                    <h4 style="margin-bottom: 8px;">Step 4 - Grow</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-body);">Participants gain access to workshops, networking, internships, and volunteer tracks.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--bg-dark); color: rgba(255,255,255,0.7); padding: 40px 0 30px 0;">
-        <div class="container footer-bottom">
-            <p>&copy; 2026 BeyondData Intellab.</p>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+    <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
+    
+    <div style="flex: 1; min-width: 300px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+        <div style="background-color: #007bff; padding: 8px 12px; border-radius: 6px; font-weight: bold;">BD</div>
+        <h2 style="margin: 0; font-size: 1.2rem;">BeyondData Intellab</h2>
+      </div>
+      <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="margin-top: 0;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+        <li>About Us</li>
+        <li>Programs</li>
+        <li>Mentorship</li>
+        <li>Opportunities</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 style="margin-top: 0;">Contact</h3>
+      <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+      <p style="opacity: 0.8;">Nairobi, Kenya</p>
+      <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+    </div>
+  </div>
+
+  <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+    <h3 style="margin-top: 0;">Stay Updated</h3>
+    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+    <div style="display: flex; gap: 10px; max-width: 500px;">
+      <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #ffffff11; color: white;">
+      <button style="background: linear-gradient(to right, #ff7e5f, #feb47b); border: none; padding: 12px 25px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer;">Subscribe</button>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
+    &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
+  </div>
+</footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>

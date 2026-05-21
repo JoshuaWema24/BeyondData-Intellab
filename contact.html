@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeyondData Intellab | Empowering Africa Through Digital Intelligence</title>
+    <title>Contact Us | BeyondData Intellab</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <nav class="navbar">
         <div class="container nav-container">
@@ -14,144 +20,142 @@
                 <div class="logo-icon">BD</div>
                 <div class="logo-text">BeyondData Intellab</div>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="mentorship.html">Mentorship</a></li>
                 <li><a href="opportunities.html">Opportunities</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <a href="application.html" class="btn-nav-apply">Apply Now</a>
+
+            <div class="nav-actions">
+                <a href="application.html" class="btn-nav-apply">Apply Now</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <header style="background: radial-gradient(circle at 50% -20%, #EFF6FF 0%, #FFFFFF 60%); padding: 80px 0 60px 0; text-align: center;">
-        <div class="container" style="max-width: 900px;">
-            
-            <div class="hero-badge">
-                <span>✦</span> Empowering Africa's Digital Future
-            </div>
-            
-            <h1 style="font-size: 3.5rem; font-weight: 800; color: #0F172A; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 28px;">
-                Empowering Africa Through <span style="color: #0062FF;">Digital Intelligence</span>, Mentorship & Innovation
-            </h1>
-            
-            <p style="font-size: 1.15rem; color: #475569; max-width: 760px; margin: 0 auto 40px auto; line-height: 1.6;">
-                The BeyondData Intellab by BeyondData ICT is a mentorship-driven ecosystem equipping young Africans with practical digital skills, career guidance, innovation exposure, employability readiness, and technology leadership opportunities for the digital economy.
-            </p>
-            
-            <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 40px;">
-                <a href="application.html" class="btn btn-pill-gradient">Apply as a Mentee</a>
-                <a href="mentorship.html" class="btn btn-pill-white">Become a Mentor</a>
-                <a href="about.html#partnership" class="btn btn-pill-outline">Partner With Us</a>
-            </div>
-
-            <p style="font-size: 0.95rem; color: #64748B; max-width: 600px; margin: 0 auto 60px auto;">
-                We are building a generation of digitally empowered youth ready to solve real African challenges using data, AI, technology, entrepreneurship, innovation, and digital collaboration.
-            </p>
-
-            <div class="stat-container-grid">
-                <div class="stat-metric-card">
-                    <div class="stat-number">10,000+</div>
-                    <div class="stat-label">Youth Empowered</div>
-                </div>
-                <div class="stat-metric-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Mentors</div>
-                </div>
-                <div class="stat-metric-card">
-                    <div class="stat-number">1,000+</div>
-                    <div class="stat-label">Opportunities</div>
-                </div>
-                <div class="stat-metric-card">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <section class="section-padding" style="background: #FFFFFF; border-top: 1px solid rgba(15,23,42,0.04);">
-        <div class="container grid-2" style="align-items: center; gap: 60px;">
-            
+    <!-- MAIN CONTACT CONTENT -->
+    <section class="section-padding">
+        <div class="container grid-2">
             <div>
-                <div class="hero-badge" style="background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; margin-bottom: 20px;">
-                    <span style="color: #2563EB;">🎯</span> Who We Are
-                </div>
-                <h2 style="font-size: 2.5rem; font-weight: 800; color: #0F172A; line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.02em;">
-                    Building Africa's Digital Future Through Mentorship
-                </h2>
-                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 20px; line-height: 1.6;">
-                    BeyondData Intellab is a mentorship-driven ecosystem dedicated to empowering African youth with the digital skills, innovation mindset, and career opportunities needed to thrive in the modern economy.
+                <h1 style="font-size: clamp(2.25rem, 5vw, 3rem); line-height: 1.15; margin-bottom: 20px;">Get In Touch</h1>
+                <p style="font-size: 1.1rem; color: var(--text-body); margin-bottom: 32px;">
+                    Have queries about the upcoming cohort schedules, corporate partnerships, or custom volunteer channels? Drop us a line.
                 </p>
-                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 32px; line-height: 1.6;">
-                    We bridge the gap between education and employment by providing hands-on training, one-on-one mentorship, and real-world project experience.
-                </p>
-                <a href="about.html" class="btn" style="background: #0062FF; color: #FFFFFF; border-radius: 8px; padding: 14px 28px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(0, 98, 255, 0.3);">
-                    Learn More &nbsp; →
-                </a>
+                <div style="background-color: var(--bg-light); padding: 32px; border-radius: 12px; border: 1px solid rgba(0, 98, 255, 0.08);">
+                    <h4 style="margin-bottom: 8px; color: var(--blue-corp);">Communication Hub</h4>
+                    <p style="margin-bottom: 4px;">📬 Email: <strong>intellab@beyonddataict.com</strong></p>
+                    <p>📍 Operational Hub: Mombasa, Kenya</p>
+                </div>
             </div>
-
-            <div style="background: #F8FAFC; padding: 40px; border-radius: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                
-                <div class="stat-metric-card" style="box-shadow: 0 10px 25px rgba(15,23,42,0.04); border-radius: 16px; padding: 24px;">
-                    <div style="color: #0062FF; font-size: 1.75rem; margin-bottom: 16px;">👥</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 700; color: #0F172A;">Mentorship</h4>
-                </div>
-
-                <div class="stat-metric-card" style="box-shadow: 0 10px 25px rgba(15,23,42,0.04); border-radius: 16px; padding: 24px;">
-                    <div style="color: #0062FF; font-size: 1.75rem; margin-bottom: 16px;">💡</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 700; color: #0F172A;">Innovation</h4>
-                </div>
-
-                <div class="stat-metric-card" style="box-shadow: 0 10px 25px rgba(15,23,42,0.04); border-radius: 16px; padding: 24px;">
-                    <div style="color: #F97316; font-size: 1.75rem; margin-bottom: 16px;">📈</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 700; color: #0F172A;">Growth</h4>
-                </div>
-
-                <div class="stat-metric-card" style="box-shadow: 0 10px 25px rgba(15,23,42,0.04); border-radius: 16px; padding: 24px;">
-                    <div style="color: #E11D48; font-size: 1.75rem; margin-bottom: 16px;">🏅</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 700; color: #0F172A;">Excellence</h4>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: #F8FAFC; border-top: 1px solid rgba(15,23,42,0.04);">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.25rem; margin-bottom: 12px; color: var(--text-heading);">What We Focus On</h2>
-            <p style="text-align: center; color: #64748B; max-width: 600px; margin: 0 auto 50px auto;">Our multi-dimensional approach to technological capacity building.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 12px;">1. Digital Skills Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-body);">Practical learning pathways in digital literacy, data analysis, AI, programming, cybersecurity, cloud technologies, productivity systems, and emerging technologies.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 12px;">2. Mentorship & Career Guidance</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-body);">Connecting learners with experienced professionals who provide guidance, accountability, industry insights, career support, and professional growth opportunities.</p>
-                </div>
-                <div class="card">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 12px;">3. Innovation & Problem Solving</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-body);">Encouraging young people to develop technology-driven solutions addressing African challenges in health, education, climate, agriculture, governance, business, sustainability, and smart communities.</p>
+            <div>
+                <div class="form-card">
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" class="form-control" required placeholder="E.g., John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" required placeholder="name@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Focus</label>
+                            <select class="form-control">
+                                <option>Ecosystem Partnership Alignment</option>
+                                <option>Cohort Application Inquiries</option>
+                                <option>Volunteer Track Inquiries</option>
+                                <option>General Inquiries</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Detailed Message</label>
+                            <textarea class="form-control" rows="4" required placeholder="Outline your programmatic requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-pill-gradient" style="width: 100%; border-radius: 8px; padding: 14px;">Transmit Inquiry</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background: #0F172A; color: #94A3B8; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-            <div>
-                <p style="font-weight: 700; color: #fff; margin-bottom: 4px;">BeyondData Intellab</p>
-                <p style="font-size: 0.85rem;">Empowering Africa with Data & Digital Intelligence.</p>
-            </div>
-            <p style="font-size: 0.85rem;">&copy; 2026 BeyondData Intellab. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+   <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
+    
+    <div style="flex: 1; min-width: 300px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+        <div style="background-color: #007bff; padding: 8px 12px; border-radius: 6px; font-weight: bold;">BD</div>
+        <h2 style="margin: 0; font-size: 1.2rem;">BeyondData Intellab</h2>
+      </div>
+      <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
+        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
+      </div>
+    </div>
 
+    <div>
+      <h3 style="margin-top: 0;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+        <li>About Us</li>
+        <li>Programs</li>
+        <li>Mentorship</li>
+        <li>Opportunities</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 style="margin-top: 0;">Contact</h3>
+      <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+      <p style="opacity: 0.8;">Nairobi, Kenya</p>
+      <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+    </div>
+  </div>
+
+  <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+    <h3 style="margin-top: 0;">Stay Updated</h3>
+    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+    <div style="display: flex; gap: 10px; max-width: 500px;">
+      <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #ffffff11; color: white;">
+      <button style="background: linear-gradient(to right, #ff7e5f, #feb47b); border: none; padding: 12px 25px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer;">Subscribe</button>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
+    &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
+  </div>
+</footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Your query record has been simulated successfully! We will connect with you soon.");
+            event.target.reset();
+        }
+    </script>
 </body>
 </html>
