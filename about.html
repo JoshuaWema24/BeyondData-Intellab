@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | BeyondData Intellab</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" class="css">
 </head>
-<body>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
+<body style="font-family: 'Inter', sans-serif; margin: 0; color: #1a1a1a; background-color: #ffffff;">
 
     <nav class="navbar">
         <div class="container nav-container">
@@ -20,82 +15,217 @@
                 <div class="logo-icon">BD</div>
                 <div class="logo-text">BeyondData Intellab</div>
             </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="mentorship.html">Mentorship</a></li>
                 <li><a href="opportunities.html">Opportunities</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-
-            <div class="nav-actions">
-                <a href="application.html" class="btn-nav-apply">Apply Now</a>
-            </div>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="application.html" class="btn-nav-apply">Apply Now</a>
         </div>
     </nav>
 
-    <!-- INTRO SECTION -->
-    <section class="section-padding" style="background-color: var(--bg-light); text-align: center;">
-        <div class="container">
-            <span class="hero-badge" style="background: rgba(0, 98, 255, 0.08); color: var(--blue-tech);">Our Purpose</span>
-            <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 16px; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
-                What is the BeyondData Intellab?
-            </h1>
-            <p style="max-width: 820px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
-                The BeyondData Intellab is a future-focused mentorship, innovation, and employability platform designed to bridge Africa’s growing digital skills and opportunity gap.
+    <section style="text-align: center; padding: 80px 20px; background: #ffffff;">
+        <div style="display: inline-block; background: rgba(0, 98, 255, 0.1); color: #0062ff; padding: 6px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px;">
+            🌐 About Us
+        </div>  
+        <h1 style="font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 800; margin: 0 auto 20px auto; max-width: 900px; line-height: 1.1;">
+            Empowering Africa's <span style="color: #0062ff;">Digital Future</span>
+        </h1>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: #555; line-height: 1.6;">
+            BeyondData Intellab is a mentorship-driven ecosystem dedicated to transforming African youth into digital leaders through practical skills, innovation, and community support.
+        </p>
+    </section>
+
+    <section style="padding: 60px 5%; background-color: #ffffff;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="background-color: #f4f7ff; padding: 40px; border-radius: 20px;">
+            <div style="background-color: #0062ff; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #0a1930;">Our Vision</h2>
+            <p style="color: #4a5568; line-height: 1.6; font-size: 1.1rem;">
+                To become Africa's leading digital empowerment ecosystem, where every young person has access to world-class mentorship, cutting-edge skills, and transformative opportunities that enable them to thrive in the global digital economy.
             </p>
         </div>
-    </section>
 
-    <!-- MISSION & VISION -->
-    <section class="section-padding">
-        <div class="container grid-2">
-            <div class="card" style="border-top: 4px solid var(--blue-tech);">
-                <h3 style="font-size: 1.45rem; margin-bottom: 16px;">Our Vision</h3>
-                <p>To build Africa’s leading youth-driven digital mentorship, innovation, and employability ecosystem that nurtures future-ready talent, responsible technology leaders, and inclusive digital transformation.</p>
+        <div style="background-color: #f4f7ff; padding: 40px; border-radius: 20px;">
+            <div style="background: linear-gradient(135deg, #ff7e5f, #feb47b); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
             </div>
-            <div class="card" style="border-top: 4px solid var(--accent-orange);">
-                <h3 style="font-size: 1.45rem; margin-bottom: 16px;">Our Mission</h3>
-                <p>To empower African youth and communities with digital intelligence, practical technology skills, mentorship, innovation opportunities, employability readiness, and entrepreneurial thinking for meaningful participation in the digital economy.</p>
-            </div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #0a1930;">Our Mission</h2>
+            <p style="color: #4a5568; line-height: 1.6; font-size: 1.1rem;">
+                To bridge the digital skills gap across Africa by providing personalized mentorship, practical training, and real-world opportunities that empower youth to build successful careers in technology and innovation.
+            </p>
         </div>
-    </section>
 
-    <!-- WHY DIGITAL INTELLIGENCE MATTERS -->
-    <section class="section-padding" style="background: var(--bg-dark); color: var(--white);">
-        <div class="container grid-2">
+    </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-light); text-align: center;">
+    <div class="container">
+        <span class="hero-badge" style="background: rgba(0, 98, 255, 0.08); color: var(--blue-tech);">Our Purpose</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 16px; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            What is the BeyondData Intellab?
+        </h1>
+        <p style="max-width: 820px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+            The BeyondData Intellab is a future-focused mentorship, innovation, and employability platform designed to bridge Africa’s growing digital skills and opportunity gap.
+        </p>
+    </div>
+</section>
+
+<section class="section-padding why-digital-section" style="background-color: #ffffff; text-align: center;">
+    <div class="container">
+        <h2 class="why-digital-title" style="font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--dark-navy); margin-bottom: 16px;">Why Digital Intelligence Matters</h2>
+        <p class="why-digital-subtitle" style="max-width: 700px; margin: 0 auto 50px auto; color: var(--gray-text); font-size: 1.05rem; line-height: 1.6;">
+            The digital revolution is reshaping Africa, and we’re ensuring no one is left behind.
+        </p>
+
+        <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center;">
+            
+            <div class="why-card" style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; max-width: 380px;">
+                <div class="icon-container" style="background: var(--blue-tech); width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span class="card-icon" style="color: #ffffff; font-size: 20px;">💡</span> </div>
+                <h3 class="card-title" style="font-size: 1.25rem; color: var(--dark-navy); margin-bottom: 12px;">The Future is Digital</h3>
+                <p class="card-text" style="color: var(--gray-text); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                    Technology is transforming every industry, and digital skills are no longer optional—they’re essential for economic participation and growth.
+                </p>
+            </div>
+
+            <div class="why-card" style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; max-width: 380px;">
+                <div class="icon-container" style="background: var(--blue-tech); width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span class="card-icon" style="color: #ffffff; font-size: 20px;">👥</span> </div>
+                <h3 class="card-title" style="font-size: 1.25rem; color: var(--dark-navy); margin-bottom: 12px;">Africa’s Youth Opportunity</h3>
+                <p class="card-text" style="color: var(--gray-text); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                    With 60% of Africa’s population under 25, we have a unique opportunity to build a digitally-empowered generation that drives innovation and prosperity.
+                </p>
+            </div>
+
+            <div class="why-card" style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; max-width: 380px;">
+                <div class="icon-container" style="background: var(--blue-tech); width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span class="card-icon" style="color: #ffffff; font-size: 20px;">🏅</span> </div>
+                <h3 class="card-title" style="font-size: 1.25rem; color: var(--dark-navy); margin-bottom: 12px;">Closing the Skills Gap</h3>
+                <p class="card-text" style="color: var(--gray-text); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                    Traditional education often doesn’t prepare youth for modern careers. We provide practical, industry-relevant skills that employers are seeking.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container grid-2">
+        </div>
+</section>
+
+<section style="background-color: #0b1a33; color: #ffffff; padding: 80px 5%; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        
+        <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Our Impact Goals</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 60px;">Ambitious targets to transform digital education across Africa</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+            
             <div>
-                <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 20px;">Why Digital Intelligence Matters</h2>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px; font-size: 1.05rem;">
-                    Africa’s future will be shaped by technology, data, AI, automation, innovation, and digital collaboration. Yet millions of young people remain excluded from meaningful access to digital opportunities, mentorship, practical exposure, and employability pathways.
-                </p>
-                <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem;">
-                    We are not just teaching tools. We are building thinkers, innovators, creators, entrepreneurs, digital leaders, and problem solvers.
-                </p>
+                <div style="font-size: 3rem; font-weight: 800; margin-bottom: 10px;">10K+</div>
+                <div style="font-size: 1rem; opacity: 0.8;">Youth Trained by 2027</div>
             </div>
-            <div class="card" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); padding: 40px;">
-                <h3 style="color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">Our Long-Term Impact Goals</h3>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; font-weight: 500; color: rgba(255,255,255,0.9);">
-                    <li>🚀 10,000+ Youth Empowered</li>
-                    <li>👥 500+ Mentors Across Africa</li>
-                    <li>💼 1,000+ Internship & Volunteer Opportunities Connected</li>
-                    <li>💡 100+ Innovation Projects Supported</li>
-                    <li>🏢 50+ Institutional Partnerships</li>
-                    <li>🌍 20+ African Communities Reached</li>
-                </ul>
+            
+            <div>
+                <div style="font-size: 3rem; font-weight: 800; margin-bottom: 10px;">1K+</div>
+                <div style="font-size: 1rem; opacity: 0.8;">Mentors Engaged</div>
+            </div>
+            
+            <div>
+                <div style="font-size: 3rem; font-weight: 800; margin-bottom: 10px;">50+</div>
+                <div style="font-size: 1rem; opacity: 0.8;">Partner Organizations</div>
+            </div>
+            
+            <div>
+                <div style="font-size: 3rem; font-weight: 800; margin-bottom: 10px;">20+</div>
+                <div style="font-size: 1rem; opacity: 0.8;">African Countries Reached</div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section style="padding: 80px 5%; background-color: #ffffff; text-align: center;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: #0a1930;">Our Team & Mentors</h2>
+        <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 40px;">Industry experts and passionate educators driving our mission</p>
+        
+        <div style="background-color: #f4f7ff; padding: 50px 30px; border-radius: 20px;">
+            <div style="font-size: 3rem; color: #0062ff; margin-bottom: 20px;">👥</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #0a1930;">500+ Expert Mentors from Leading Organizations</h3>
+            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Our mentors come from top tech companies, startups, NGOs, and academic institutions across Africa and beyond. They bring real-world experience, industry connections, and a passion for empowering the next generation.
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Google</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Microsoft</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Andela</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Flutterwave</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Safaricom</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 50px; font-weight: 600; color: #0a1930; border: 1px solid #e2e8f0;">Jumia</span>
             </div>
         </div>
-    </section>
+        
+    </div>
+</section>
 
-    <!-- FOOTER -->
+    <section style="padding: 80px 5%; background-color: #ffffff; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: #0a1930;">Our Partnerships</h2>
+        <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 50px;">Collaborating with leading organizations to maximize our impact</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <div style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #edf2f7; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #eff6ff; color: #0062ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 1.5rem;">🌐</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #0a1930;">Tech Companies</h3>
+                <p style="color: #4a5568; line-height: 1.6;">Partnering with industry leaders to provide tools, resources, and opportunities.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #edf2f7; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #eff6ff; color: #0062ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 1.5rem;">🏅</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #0a1930;">Educational Institutions</h3>
+                <p style="color: #4a5568; line-height: 1.6;">Working with universities and training centers to expand our reach.</p>
+            </div>
+
+            <div style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #edf2f7; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="background: #eff6ff; color: #0062ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 1.5rem;">👥</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #0a1930;">NGOs & Government</h3>
+                <p style="color: #4a5568; line-height: 1.6;">Collaborating with impact organizations and public sector to scale programs.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section style="background: linear-gradient(90deg, #2e5bff, #ff7e5f); padding: 60px 20px; text-align: center; color: white; font-family: sans-serif;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">Join Our Mission</h2>
+    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; opacity: 0.9;">
+      Whether you're a young person looking to build digital skills, a professional wanting to give back, or an organization ready to partner with us—there's a place for you.
+    </p>
+    
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+      <a href="/apply-mentee" style="padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; background: white; color: #2e5bff;">Apply as a Mentee</a>
+      <a href="/become-mentor" style="padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; color: white;">Become a Mentor</a>
+      <a href="/partner-us" style="padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; color: white;">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+   <!-- FOOTER -->
     <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
     
@@ -145,19 +275,5 @@
   </div>
 </footer>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function toggleMenu() {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-    </script>
 </body>
 </html>

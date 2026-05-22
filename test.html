@@ -5,55 +5,454 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background: url('download (6).jpg')no-repeat center center fixed;
-            background-size: cover;
-            background-position: fixed;
-            display: flex;
-            justify-content: center;
-        }
-        .wrapper{
-            width:300px;
-            height: 300px;
-            margin-top: 125px;
-            background: transparent;
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            box-shadow: 0 0 50px rgba(9, 7, 112, 0.5);
-            padding: 30px;
-            display: flex;
-            justify-content: center;
-        }
-        input{
-            margin-top: 20px;
-            width: 250px;
-            height: 30px;
-        }
-        button{
-            margin-top:20px;
-            width: 200px;
-            height: 30px;
-            margin-left: 25px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover{
-            background: linear-gradient(to right, blue, green);
-        }
+       /* From Uiverse.io by Danishrehman786 */ 
+.card-toggle {
+  display: none;
+}
+
+.card-scene {
+  position: relative;
+  width: 20em;
+  height: 25em;
+  perspective: 1800px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-scene:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+}
+
+.cosmic-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#small-card {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #c77dff,
+    #7b2cbf 55%,
+    #240046 100%
+  );
+  box-shadow:
+    0 0 40px rgba(199, 125, 255, 0.6),
+    0 0 90px rgba(123, 44, 191, 0.6),
+    inset 0 0 25px rgba(255, 255, 255, 0.25);
+  transform: translate(-50%, -50%) rotateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+#small-card:hover {
+  transform: translate(-50%, -50%) scale(1.1) rotateY(10deg) rotateX(5deg);
+  box-shadow:
+    0 0 60px rgba(199, 125, 255, 0.8),
+    0 0 120px rgba(123, 44, 191, 0.8),
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 35px rgba(255, 255, 255, 0.35);
+}
+
+#large-card {
+  width: 13em;
+  height: 18em;
+  border-radius: 1em;
+  background: radial-gradient(circle at 30% 20%, #c77dff, #3c096c 70%);
+  box-shadow:
+    0 0 35px rgba(199, 125, 255, 0.6),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%) scale(0.8) rotateX(45deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-toggle:checked ~ #large-card:hover {
+  transform: translate(-50%, -50%) rotateY(5deg) rotateX(3deg) scale(1.02);
+  box-shadow:
+    0 0 50px rgba(199, 125, 255, 0.8),
+    0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.card-toggle:checked ~ #large-card {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotateX(0);
+  pointer-events: all;
+  z-index: 3;
+}
+
+.card-toggle:checked ~ #small-card {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5) rotateX(-45deg);
+  pointer-events: none;
+}
+
+.energy-ring {
+  position: absolute;
+  inset: -1.2em;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #00f5ff, #c77dff, #ff70a6, #00f5ff);
+  filter: blur(18px);
+  opacity: 0.85;
+  animation: spin 6s linear infinite;
+}
+
+#large-card .energy-ring {
+  inset: -1.3em;
+  filter: blur(22px);
+  border-radius: 1.2em;
+}
+
+.card-core {
+  position: absolute;
+  inset: 0.9em;
+  border-radius: 50%;
+  background: rgba(10, 0, 30, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+#small-card:hover .card-core {
+  transform: translateZ(15px) scale(1.05);
+}
+
+#large-card .card-core {
+  position: absolute;
+  inset: 0.8em;
+  background: rgba(8, 0, 20, 0.85);
+  border-radius: 0.9em;
+  backdrop-filter: blur(10px);
+  padding: 0.7em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: normal;
+  justify-content: flex-start;
+}
+
+.card-toggle:checked ~ #large-card:hover .card-core {
+  transform: translateZ(20px);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00f5ff, #c77dff, #ff70a6);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: textFlow 4s linear infinite;
+}
+
+#large-card .title {
+  font-size: 1em;
+}
+
+.subtitle {
+  font-size: 0.7em;
+  letter-spacing: 0.18em;
+  margin-top: 0.3em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#large-card .subtitle {
+  font-size: 0.55em;
+  letter-spacing: 0.15em;
+  opacity: 0.75;
+  margin-bottom: 0.4em;
+}
+
+.open-btn,
+.play-btn {
+  margin-top: 0.8em;
+  padding: 0.35em 1.1em;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #00f5ff, #c77dff);
+  color: #060010;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.7);
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.8em;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.open-btn:hover,
+.play-btn:hover {
+  transform: scale(1.1) translateZ(10px);
+  box-shadow:
+    0 0 30px rgba(255, 112, 166, 1),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-btn {
+  margin-top: 0.4em;
+  padding: 0.35em;
+  border-radius: 0.5em;
+  font-size: 0.6em;
+  font-weight: 800;
+  display: block;
+  text-align: center;
+}
+
+.rarity {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-size: 0.55em;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff70a6, #c77dff);
+  color: #12001f;
+  font-weight: 800;
+  z-index: 5;
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+
+#large-card:hover .rarity {
+  transform: translateZ(25px) scale(1.05);
+}
+
+.energy-cost {
+  position: absolute;
+  top: 0.45em;
+  right: 0.5em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  background: #00f5ff;
+  color: #050014;
+  display: grid;
+  place-items: center;
+  font-size: 0.8em;
+  font-weight: 900;
+  box-shadow: 0 0 15px #00f5ff;
+  z-index: 5;
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+
+#large-card:hover .energy-cost {
+  transform: translateZ(25px) scale(1.1);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.6em 0;
+}
+
+.stat {
+  font-size: 0.7em;
+  font-weight: 800;
+  padding: 0.3em 0.6em;
+  border-radius: 0.4em;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#large-card:hover .stat {
+  transform: translateZ(5px);
+}
+
+.atk {
+  color: #ff4d6d;
+}
+.def {
+  color: #4d96ff;
+}
+
+.ability {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.45em;
+  border-radius: 0.5em;
+  font-size: 0.55em;
+  margin-bottom: 0.4em;
+  transition: all 0.3s ease;
+}
+
+#large-card:hover .ability {
+  transform: translateZ(10px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ability strong {
+  display: block;
+  color: #00f5ff;
+  margin-bottom: 0.15em;
+}
+
+.flavor {
+  font-size: 0.5em;
+  opacity: 0.6;
+  font-style: italic;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+#large-card:hover .flavor {
+  transform: translateZ(5px);
+  opacity: 0.8;
+}
+
+.spark {
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: white;
+  filter: blur(2px);
+  opacity: 0;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+#small-card:hover .spark {
+  animation-duration: 3s;
+  opacity: 0.8;
+}
+
+#large-card:hover .spark {
+  animation-duration: 2.5s;
+  opacity: 0.9;
+}
+
+.spark-1 {
+  top: 20%;
+  left: 70%;
+  animation: sparkFloat 4s ease-in-out infinite;
+}
+.spark-2 {
+  top: 65%;
+  left: 25%;
+  animation: sparkFloat 4.5s ease-in-out 1s infinite;
+}
+.spark-3 {
+  top: 40%;
+  left: 85%;
+  animation: sparkFloat 5s ease-in-out 2s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes textFlow {
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes sparkFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-1.6em) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.card-toggle:checked ~ #large-card {
+  transform: translate(-50%, -50%) rotateX(0) rotateY(0) translateZ(0);
+}
+
+@media (max-width: 480px) {
+  .card-scene {
+    transform: scale(0.85);
+  }
+
+  .card-scene:hover {
+    transform: scale(0.85) translateY(-10px) rotateX(5deg) rotateY(-5deg);
+  }
+}
+
 
 
         
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <form>
-            <input name="username" type="text" placeholder="Username"><br>
-            <input name="password" type="password" placeholder="Password"><br>
-            <button id="btn" type="submit">Login</button>
-            <p> Don't have an account? <a href="#">Sign up</a></p>
-        </form>
+    <div class="card-scene">
+  <input type="checkbox" id="cardToggle" class="card-toggle" />
+
+  <div class="cosmic-card" id="large-card">
+    <div class="rarity">EPIC</div>
+    <div class="energy-cost">3</div>
+    <div class="energy-ring"></div>
+
+    <div class="card-core">
+      <p class="title">Playing Card</p>
+      <p class="subtitle">Cosmic Mage</p>
+
+      <div class="stats">
+        <div class="stat atk">⚔ 28</div>
+        <div class="stat def">🛡 18</div>
+      </div>
+
+      <div class="ability">
+        <strong>Orbit Overload</strong>
+        <span>
+          Deal 28 damage.<br />
+          If enemy has Tech, apply Burn.
+        </span>
+      </div>
+
+      <p class="flavor">"Developed By Danish Rehman."</p>
+
+      <label for="cardToggle" class="play-btn">Play</label>
     </div>
+
+    <div class="spark spark-1"></div>
+    <div class="spark spark-2"></div>
+    <div class="spark spark-3"></div>
+  </div>
+
+  <label for="cardToggle" class="cosmic-card" id="small-card">
+    <div class="energy-ring"></div>
+
+    <div class="card-core">
+      <p class="title">Playing Card</p>
+      <p class="subtitle">Next-Gen UI</p>
+
+      <div class="open-btn">Open</div>
+    </div>
+
+    <div class="spark spark-1"></div>
+    <div class="spark spark-2"></div>
+    <div class="spark spark-3"></div>
+  </label>
+</div>
+
 </body>
 </html>
