@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+
         .timeline-box {
             display: flex;
             flex-direction: column;
@@ -34,10 +37,173 @@
             font-size: 1.15rem;
         }
 
+        /* ===== NEWSLETTER ===== */
+        .newsletter-row {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+        }
+        .newsletter-row input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            background: #ffffff11;
+            color: white;
+            min-width: 0;
+        }
+        .newsletter-row button {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        /* ===== WEEKLY BREAKDOWN GRID ===== */
+        .weekly-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* ===== OUTCOMES GRID ===== */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            /* Program timeline phases */
+            .phases-row {
+                flex-direction: column !important;
+            }
+            .phases-row > div {
+                min-width: unset !important;
+                width: 100%;
+            }
+
+            /* Weekly breakdown */
+            .weekly-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Outcomes */
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Application steps — keep icon from squishing */
+            .app-step {
+                flex-wrap: wrap;
+            }
+
+            /* Newsletter */
+            .newsletter-row {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            .newsletter-row input,
+            .newsletter-row button {
+                width: 100%;
+            }
+
+            /* Footer */
+            .footer-inner {
+                flex-direction: column !important;
+            }
+            .footer-inner > div:first-child {
+                min-width: unset !important;
+            }
+
+            /* Section headings via clamp already handle font size */
+
+            /* Apply Now button in sidebar on mobile */
+            .nav-actions {
+                display: none;
+            }
+
+            .nav-links::after {
+                content: '';
+                display: block;
+                height: 1px;
+                background: #e2e8f0;
+                margin: 16px 0;
+            }
+
+            .nav-links li:last-child::after {
+                content: '';
+                display: block;
+                padding: 12px 0;
+            }
+
+            .nav-links::before {
+                content: '';
+                display: block;
+            }
+
+            .nav-links.active::after {
+                content: '';
+                display: block;
+                height: 1px;
+                background: #e2e8f0;
+                margin: 16px 0;
+            }
+        }
+
         @media (max-width: 576px) {
             .timeline-node {
                 grid-template-columns: 1fr;
                 gap: 12px;
+            }
+
+            /* Outcomes single column already handled above */
+        }
+
+        /* Mobile Apply Now Button in Sidebar */
+        @media (max-width: 768px) {
+            .nav-links::after {
+                content: '';
+                display: block;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1);
+                margin: 16px 0;
+            }
+
+            .nav-links li:last-child {
+                margin-bottom: 12px;
+            }
+
+            .sidebar-apply-btn {
+                display: none;
+            }
+
+            .nav-links.active ~ .sidebar-apply-btn {
+                display: block;
+                padding: 0 24px 20px;
+            }
+
+            .sidebar-apply-btn a {
+                display: block;
+                background: linear-gradient(to right, #0062ff, #4f46e5);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: 600;
+                transition: opacity 0.3s;
+            }
+
+            .sidebar-apply-btn a:hover {
+                opacity: 0.9;
             }
         }
     </style>
@@ -76,388 +242,344 @@
 
     <!-- INTRO SECTION -->
     <section style="padding: 60px 20px; text-align: center; background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
-    <div class="container">
-        <div style="display: inline-block; padding: 6px 16px; background: white; border: 1px solid #e0e7ff; border-radius: 50px; margin-bottom: 24px; font-size: 0.85rem; color: #4b5563; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <span style="margin-right: 6px;">🏅</span> Our Programs
+        <div class="container">
+            <div style="display: inline-block; padding: 6px 16px; background: white; border: 1px solid #e0e7ff; border-radius: 50px; margin-bottom: 24px; font-size: 0.85rem; color: #4b5563; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <span style="margin-right: 6px;">🏅</span> Our Programs
+            </div>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: #1e293b; margin-bottom: 20px; line-height: 1.1;">
+                8-Week Digital <span style="color: #0062ff;">Career Accelerator</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: #64748b; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                An intensive, mentorship-driven program designed to transform your digital career through hands-on learning, expert guidance, and real-world projects.
+            </p>
         </div>
-        
-        <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: #1e293b; margin-bottom: 20px; line-height: 1.1;">
-            8-Week Digital <span style="color: #0062ff;">Career Accelerator</span>
-        </h1>
-        
-        <p style="font-size: 1.25rem; color: #64748b; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-            An intensive, mentorship-driven program designed to transform your digital career through hands-on learning, expert guidance, and real-world projects.
-        </p>
-    </div>
-</section>
+    </section>
 
-<section class="section-padding" style="background-color: #ffffff;">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Program Overview</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">Everything you need to launch or accelerate your digital career</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Program Overview</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Everything you need to launch or accelerate your digital career</p>
             
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">👤</div>
-                <h3 style="margin-bottom: 12px;">Expert Mentorship</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">One-on-one guidance from industry professionals throughout the program</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">👤</div>
+                    <h3 style="margin-bottom: 12px;">Expert Mentorship</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">One-on-one guidance from industry professionals throughout the program</p>
+                </div>
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">💡</div>
+                    <h3 style="margin-bottom: 12px;">Hands-On Projects</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Build a portfolio of real-world projects that demonstrate your skills</p>
+                </div>
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">📈</div>
+                    <h3 style="margin-bottom: 12px;">Career Development</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Resume building, interview prep, and job search strategies</p>
+                </div>
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">🎖️</div>
+                    <h3 style="margin-bottom: 12px;">Certification</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Earn a recognized certificate upon successful program completion</p>
+                </div>
             </div>
-
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">💡</div>
-                <h3 style="margin-bottom: 12px;">Hands-On Projects</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Build a portfolio of real-world projects that demonstrate your skills</p>
-            </div>
-
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">📈</div>
-                <h3 style="margin-bottom: 12px;">Career Development</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Resume building, interview prep, and job search strategies</p>
-            </div>
-
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">🎖️</div>
-                <h3 style="margin-bottom: 12px;">Certification</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Earn a recognized certificate upon successful program completion</p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-padding" style="background-color: #f8fafc;">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Cohort Structure</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">Small, focused cohorts ensure personalized attention and community building</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Cohort Structure</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Small, focused cohorts ensure personalized attention and community building</p>
             
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">50</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Mentees per Cohort</h3>
-                <p style="color: #64748b;">Ensuring quality engagement</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">50</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Mentees per Cohort</h3>
+                    <p style="color: #64748b;">Ensuring quality engagement</p>
+                </div>
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">10</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Expert Mentors</h3>
+                    <p style="color: #64748b;">5:1 mentee-to-mentor ratio</p>
+                </div>
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">8</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Weeks of Training</h3>
+                    <p style="color: #64748b;">Intensive, focused learning</p>
+                </div>
             </div>
-
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">10</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Expert Mentors</h3>
-                <p style="color: #64748b;">5:1 mentee-to-mentor ratio</p>
-            </div>
-
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">8</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Weeks of Training</h3>
-                <p style="color: #64748b;">Intensive, focused learning</p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-padding" style="background-color: #f8fafc;">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Cohort Structure</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">Small, focused cohorts ensure personalized attention and community building</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Cohort Structure</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">Small, focused cohorts ensure personalized attention and community building</p>
             
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">50</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Mentees per Cohort</h3>
-                <p style="color: #64748b;">Ensuring quality engagement</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">50</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Mentees per Cohort</h3>
+                    <p style="color: #64748b;">Ensuring quality engagement</p>
+                </div>
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">10</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Expert Mentors</h3>
+                    <p style="color: #64748b;">5:1 mentee-to-mentor ratio</p>
+                </div>
+                <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">8</div>
+                    <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Weeks of Training</h3>
+                    <p style="color: #64748b;">Intensive, focused learning</p>
+                </div>
             </div>
-
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">10</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Expert Mentors</h3>
-                <p style="color: #64748b;">5:1 mentee-to-mentor ratio</p>
-            </div>
-
-            <div style="background: white; padding: 40px 20px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                <div style="font-size: 3rem; font-weight: 800; color: #0062ff; margin-bottom: 8px;">8</div>
-                <h3 style="margin-bottom: 8px; font-size: 1.25rem;">Weeks of Training</h3>
-                <p style="color: #64748b;">Intensive, focused learning</p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section style="background-color: #0b1a33; padding: 80px 20px; color: white;">
-    <div class="container" style="text-align: center;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 16px; color: white;">Program Timeline</h2>
-        <p style="opacity: 0.8; margin-bottom: 50px; font-size: 1.1rem;">Four phases designed to build skills progressively</p>
-        
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <section style="background-color: #0b1a33; padding: 80px 20px; color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 16px; color: white;">Program Timeline</h2>
+            <p style="opacity: 0.8; margin-bottom: 50px; font-size: 1.1rem;">Four phases designed to build skills progressively</p>
             
-            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 250px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 1</div>
-                <h3 style="margin-bottom: 8px; color: white;">Weeks 1-2</h3>
-                <h4 style="margin-bottom: 12px; color: #60a5fa;">Foundation</h4>
-                <p style="font-size: 0.95rem; opacity: 0.9;">Digital literacy, orientation, and goal setting</p>
+            <div class="phases-row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 1</div>
+                    <h3 style="margin-bottom: 8px; color: white;">Weeks 1-2</h3>
+                    <h4 style="margin-bottom: 12px; color: #60a5fa;">Foundation</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Digital literacy, orientation, and goal setting</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 2</div>
+                    <h3 style="margin-bottom: 8px; color: white;">Weeks 3-5</h3>
+                    <h4 style="margin-bottom: 12px; color: #60a5fa;">Skill Building</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">AI tools, personal branding, and employability skills</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 3</div>
+                    <h3 style="margin-bottom: 8px; color: white;">Weeks 6-7</h3>
+                    <h4 style="margin-bottom: 12px; color: #60a5fa;">Application</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Entrepreneurship, projects, and real-world practice</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 4</div>
+                    <h3 style="margin-bottom: 8px; color: white;">Week 8</h3>
+                    <h4 style="margin-bottom: 12px; color: #60a5fa;">Showcase</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Final presentations, networking, and next steps</p>
+                </div>
             </div>
-
-            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 250px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 2</div>
-                <h3 style="margin-bottom: 8px; color: white;">Weeks 3-5</h3>
-                <h4 style="margin-bottom: 12px; color: #60a5fa;">Skill Building</h4>
-                <p style="font-size: 0.95rem; opacity: 0.9;">AI tools, personal branding, and employability skills</p>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 250px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 3</div>
-                <h3 style="margin-bottom: 8px; color: white;">Weeks 6-7</h3>
-                <h4 style="margin-bottom: 12px; color: #60a5fa;">Application</h4>
-                <p style="font-size: 0.95rem; opacity: 0.9;">Entrepreneurship, projects, and real-world practice</p>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 250px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 4</div>
-                <h3 style="margin-bottom: 8px; color: white;">Week 8</h3>
-                <h4 style="margin-bottom: 12px; color: #60a5fa;">Showcase</h4>
-                <p style="font-size: 0.95rem; opacity: 0.9;">Final presentations, networking, and next steps</p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-padding" style="background-color: #ffffff;">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 class="section-title">Weekly Breakdown</h2>
-            <p class="section-subtitle">A detailed look at what you'll learn each week</p>
-        </div>
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 class="section-title">Weekly Breakdown</h2>
+                <p class="section-subtitle">A detailed look at what you'll learn each week</p>
+            </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 24px;">
-            
-            <script>
-                const weeks = [
-                    { week: "1", title: "Orientation & Onboarding", items: ["Program introduction", "Mentor matching", "Goal setting", "Community building"] },
-                    { week: "2", title: "Digital Literacy Foundations", items: ["Essential digital tools", "Cloud platforms", "Collaboration software", "Digital citizenship"] },
-                    { week: "3", title: "AI & Automation", items: ["Introduction to AI", "ChatGPT & AI tools", "Automation basics", "AI in business"] },
-                    { week: "4", title: "Personal Branding & LinkedIn", items: ["Professional profiles", "LinkedIn optimization", "Content creation", "Networking strategies"] },
-                    { week: "5", title: "Employability Skills", items: ["Resume writing", "Cover letters", "Interview preparation", "Job search strategies"] },
-                    { week: "6", title: "Entrepreneurship Basics", items: ["Digital business models", "Startup fundamentals", "Pitching ideas", "Financial basics"] },
-                    { week: "7", title: "Capstone Projects", items: ["Project planning", "Implementation", "Problem solving", "Collaboration"] },
-                    { week: "8", title: "Final Showcase & Networking", items: ["Project presentations", "Industry connections", "Next steps", "Certification"] }
-                ];
+            <div class="weekly-grid">
+                <script>
+                    const weeks = [
+                        { week: "1", title: "Orientation & Onboarding", items: ["Program introduction", "Mentor matching", "Goal setting", "Community building"] },
+                        { week: "2", title: "Digital Literacy Foundations", items: ["Essential digital tools", "Cloud platforms", "Collaboration software", "Digital citizenship"] },
+                        { week: "3", title: "AI & Automation", items: ["Introduction to AI", "ChatGPT & AI tools", "Automation basics", "AI in business"] },
+                        { week: "4", title: "Personal Branding & LinkedIn", items: ["Professional profiles", "LinkedIn optimization", "Content creation", "Networking strategies"] },
+                        { week: "5", title: "Employability Skills", items: ["Resume writing", "Cover letters", "Interview preparation", "Job search strategies"] },
+                        { week: "6", title: "Entrepreneurship Basics", items: ["Digital business models", "Startup fundamentals", "Pitching ideas", "Financial basics"] },
+                        { week: "7", title: "Capstone Projects", items: ["Project planning", "Implementation", "Problem solving", "Collaboration"] },
+                        { week: "8", title: "Final Showcase & Networking", items: ["Project presentations", "Industry connections", "Next steps", "Certification"] }
+                    ];
 
-                weeks.forEach(w => {
-                    document.write(`
-                        <div style="background: #f8fafc; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                                <div style="background: #0062ff; color: white; width: 45px; height: 45px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700;">${w.week}</div>
-                                <div>
-                                    <div style="font-size: 0.8rem; font-weight: 600; color: #0062ff;">Week ${w.week}</div>
-                                    <h3 style="margin: 0; font-size: 1.25rem;">${w.title}</h3>
+                    weeks.forEach(w => {
+                        document.write(`
+                            <div style="background: #f8fafc; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                                    <div style="background: #0062ff; color: white; width: 45px; height: 45px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${w.week}</div>
+                                    <div>
+                                        <div style="font-size: 0.8rem; font-weight: 600; color: #0062ff;">Week ${w.week}</div>
+                                        <h3 style="margin: 0; font-size: 1.25rem;">${w.title}</h3>
+                                    </div>
                                 </div>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    ${w.items.map(item => `<li style="margin-bottom: 10px; display: flex; align-items: center; color: #475569;"><span style="color: #0062ff; margin-right: 10px; flex-shrink: 0;">✓</span> ${item}</li>`).join('')}
+                                </ul>
                             </div>
-                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                ${w.items.map(item => `<li style="margin-bottom: 10px; display: flex; align-items: center; color: #475569;"><span style="color: #0062ff; margin-right: 10px;">✓</span> ${item}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `);
-                });
-            </script>
+                        `);
+                    });
+                </script>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-padding" style="background-color: #f8fafc;">
-    <div class="container" style="max-width: 800px; text-align: center;">
-        <h2 class="section-title">Application Process</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">Five simple steps to join our program</p>
+    <section class="section-padding" style="background-color: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title" style="text-align: center;">Application Process</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px; text-align: center;">Five simple steps to join our program</p>
 
-        <div style="display: flex; flex-direction: column; gap: 16px; text-align: left;">
-            
-            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</div>
-                <div>
-                    <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Complete Online Application</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Fill out our application form with your background and goals</p>
+            <div style="display: flex; flex-direction: column; gap: 16px; text-align: left;">
+                <div class="app-step" style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Complete Online Application</h3>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Fill out our application form with your background and goals</p>
+                    </div>
+                </div>
+                <div class="app-step" style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Submit Required Documents</h3>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Provide resume/CV and a brief personal statement</p>
+                    </div>
+                </div>
+                <div class="app-step" style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Initial Screening</h3>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Our team reviews applications for fit and commitment</p>
+                    </div>
+                </div>
+                <div class="app-step" style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Interview (if selected)</h3>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Brief conversation to understand your goals and expectations</p>
+                    </div>
+                </div>
+                <div class="app-step" style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">5</div>
+                    <div>
+                        <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Program Enrollment</h3>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Final selection and onboarding into the cohort</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</div>
-                <div>
-                    <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Submit Required Documents</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Provide resume/CV and a brief personal statement</p>
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Selection Criteria</h2>
+            <p class="section-subtitle" style="margin-bottom: 40px;">We look for passion, commitment, and potential</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">💡</div>
+                    <h3 style="margin-bottom: 12px;">Passion for Learning</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Genuine interest in developing digital skills and growing your career</p>
+                </div>
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">🎯</div>
+                    <h3 style="margin-bottom: 12px;">Commitment & Availability</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Ability to dedicate time and effort to the 8-week program</p>
+                </div>
+                <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">📈</div>
+                    <h3 style="margin-bottom: 12px;">Growth Mindset</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">Openness to feedback, willingness to experiment, and resilience</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</div>
-                <div>
-                    <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Initial Screening</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Our team reviews applications for fit and commitment</p>
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #473ef7 0%, #ce6e00 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Program Outcomes</h2>
+            <p style="opacity: 0.9; margin-bottom: 50px; font-size: 1.1rem;">What you'll achieve by completing the accelerator</p>
+            
+            <div class="outcomes-grid">
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Comprehensive digital skills portfolio</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Professional mentor relationship</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Completed capstone project</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Career-ready resume and LinkedIn profile</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Interview and job search skills</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Industry connections and network</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Program completion certificate</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; text-align: left;"><span style="flex-shrink: 0;">✓</span> Access to ongoing opportunities</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 40px;">
+                <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                    <span style="font-weight: 600; color: #1e293b;">What are the program requirements?</span>
+                    <span style="color: #64748b; flex-shrink: 0;">▼</span>
+                </div>
+                <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                    <span style="font-weight: 600; color: #1e293b;">Is the program virtual or in-person?</span>
+                    <span style="color: #64748b; flex-shrink: 0;">▼</span>
+                </div>
+                <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                    <span style="font-weight: 600; color: #1e293b;">What is the time commitment?</span>
+                    <span style="color: #64748b; flex-shrink: 0;">▼</span>
+                </div>
+                <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+                    <span style="font-weight: 600; color: #1e293b;">Will I receive a certificate?</span>
+                    <span style="color: #64748b; flex-shrink: 0;">▼</span>
                 </div>
             </div>
-
-            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">4</div>
-                <div>
-                    <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Interview (if selected)</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Brief conversation to understand your goals and expectations</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <div style="background: #0062ff; color: white; min-width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">5</div>
-                <div>
-                    <h3 style="margin: 0 0 4px 0; font-size: 1.1rem;">Program Enrollment</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Final selection and onboarding into the cohort</p>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>  
+    </section>
 
-<section class="section-padding" style="background-color: #ffffff;">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Selection Criteria</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">We look for passion, commitment, and potential</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">💡</div>
-                <h3 style="margin-bottom: 12px;">Passion for Learning</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Genuine interest in developing digital skills and growing your career</p>
-            </div>
-
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">🎯</div>
-                <h3 style="margin-bottom: 12px;">Commitment & Availability</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Ability to dedicate time and effort to the 8-week program</p>
-            </div>
-
-            <div style="background: #f8fafc; padding: 40px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                <div style="background: #eff6ff; color: #2563eb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem;">📈</div>
-                <h3 style="margin-bottom: 12px;">Growth Mindset</h3>
-                <p style="color: #64748b; font-size: 0.95rem;">Openness to feedback, willingness to experiment, and resilience</p>
-            </div>
-
+    <section style="background-color: #0b1a33; padding: 80px 20px; color: white; text-align: center;">
+        <div class="container">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">📅</div>
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 16px; color:#0062ff">Ready to Transform Your Career?</h2>
+            <p style="opacity: 0.8; max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">
+                Applications for Cohort 1 are now open. Don't miss this opportunity to join Africa's premier digital accelerator.
+            </p>
+            <a href="application.html" class="btn-nav-apply" style="padding: 16px 32px; font-size: 1.1rem;">Apply Now →</a>
         </div>
-    </div>
-</section>
-
-<section style="padding: 80px 20px; background: linear-gradient(135deg, #473ef7 0%, #ce6e00 100%); color: white; text-align: center;">
-    <div class="container">
-        <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Program Outcomes</h2>
-        <p style="opacity: 0.9; margin-bottom: 50px; font-size: 1.1rem;">What you'll achieve by completing the accelerator</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
-            
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Comprehensive digital skills portfolio</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Professional mentor relationship</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Completed capstone project</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Career-ready resume and LinkedIn profile</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Interview and job search skills</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Industry connections and network</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Program completion certificate</div>
-            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px;"><span>✓</span> Access to ongoing opportunities</div>
-            
-        </div>
-    </div>
-</section>
-
-<section class="section-padding" style="background-color: #ffffff;">
-    <div class="container" style="max-width: 800px;">
-        <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
-        
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 40px;">
-            
-            <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 600; color: #1e293b;">What are the program requirements?</span>
-                <span style="color: #64748b;">▼</span>
-            </div>
-
-            <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 600; color: #1e293b;">Is the program virtual or in-person?</span>
-                <span style="color: #64748b;">▼</span>
-            </div>
-
-            <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 600; color: #1e293b;">What is the time commitment?</span>
-                <span style="color: #64748b;">▼</span>
-            </div>
-
-            <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 600; color: #1e293b;">Will I receive a certificate?</span>
-                <span style="color: #64748b;">▼</span>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-<section style="background-color: #0b1a33; padding: 80px 20px; color: white; text-align: center;">
-    <div class="container">
-        <div style="font-size: 2.5rem; margin-bottom: 10px;">📅</div>
-        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 16px; color:#0062ff">Ready to Transform Your Career?</h2>
-        <p style="opacity: 0.8; max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">
-            Applications for Cohort 1 are now open. Don't miss this opportunity to join Africa's premier digital accelerator.
-        </p>
-        <a href="application.html" class="btn-nav-apply" style="padding: 16px 32px; font-size: 1.1rem;">Apply Now →</a>
-    </div>
-</section>
-
-
-   
+    </section>
 
     <!-- FOOTER -->
     <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-        <div style="background-color: #007bff; padding: 8px 12px; border-radius: 6px; font-weight: bold;">BD</div>
-        <h2 style="margin: 0; font-size: 1.2rem; color: white;">BeyondData Intellab</h2>
-      </div>
-      <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
-      <div style="display: flex; gap: 10px; margin-top: 20px;">
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
-      </div>
-    </div>
+        <div class="footer-inner" style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
+            <div style="flex: 1; min-width: 260px; max-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <div style="background-color: #007bff; padding: 8px 12px; border-radius: 6px; font-weight: bold;">BD</div>
+                    <h2 style="margin: 0; font-size: 1.2rem; color: white;">BeyondData Intellab</h2>
+                </div>
+                <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+                    <li>About Us</li>
+                    <li>Programs</li>
+                    <li>Mentorship</li>
+                    <li>Opportunities</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Contact</h3>
+                <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+                <p style="opacity: 0.8;">Nairobi, Kenya</p>
+                <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+            </div>
+        </div>
 
-    <div>
-      <h3 style="margin-top: 0;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
-        <li>About Us</li>
-        <li>Programs</li>
-        <li>Mentorship</li>
-        <li>Opportunities</li>
-      </ul>
-    </div>
+        <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+            <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
+            <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+            <div class="newsletter-row">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
 
-    <div>
-      <h3 style="margin-top: 0; color: white;">Contact</h3>
-      <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-      <p style="opacity: 0.8;">Nairobi, Kenya</p>
-      <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
-    </div>
-  </div>
-
-  <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
-    <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
-    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-    <div style="display: flex; gap: 10px; max-width: 500px;">
-      <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #ffffff11; color: white;">
-      <button style="background: linear-gradient(to right, #a55440, #cf5f0a); border: none; padding: 12px 25px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer;">Subscribe</button>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-    &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
-  </div>
-</footer>
+        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
+            &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
+        </div>
+    </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
