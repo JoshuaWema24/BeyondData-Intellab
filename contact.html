@@ -10,6 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+  /* Responsive grid: 2 columns on large screens, 1 column on smaller screens */
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 <body>
 
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -59,7 +79,7 @@
   
 </section>
 
-<section style="font-family: sans-serif; padding: 60px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+<section class="contact-container">
   
   <div>
     <h2 style="font-size: 32px; margin-bottom: 10px;">Send Us a Message</h2>
@@ -68,11 +88,11 @@
     <form style="display: flex; flex-direction: column; gap: 20px;">
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Name *</label>
-        <input type="text" placeholder="John Doe" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+        <input type="text" placeholder="John Doe" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
       </div>
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px;">Email Address *</label>
-        <input type="email" placeholder="john@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+        <input type="email" placeholder="john@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
       </div>
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px;">I'm interested in *</label>
@@ -82,11 +102,11 @@
       </div>
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px;">Subject *</label>
-        <input type="text" placeholder="Brief subject of your message" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+        <input type="text" placeholder="Brief subject of your message" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
       </div>
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px;">Message *</label>
-        <textarea placeholder="Tell us more about your inquiry..." style="width: 100%; height: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+        <textarea placeholder="Tell us more about your inquiry..." style="width: 100%; height: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;"></textarea>
       </div>
       <button type="submit" style="background-color: #0066ff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;">
         Send Message
@@ -99,9 +119,9 @@
     <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px;">
       <h3 style="font-size: 20px; margin-bottom: 20px;">Quick Links</h3>
       <div style="display: flex; flex-direction: column; gap: 15px;">
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;"><strong>Apply as a Mentee</strong><br><small style="color: #666;">Join our accelerator program</small></div>
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;"><strong>Become a Mentor</strong><br><small style="color: #666;">Share your expertise</small></div>
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0;"><strong>Partner With Us</strong><br><small style="color: #666;">Collaborate on our mission</small></div>
+        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong>Apply as a Mentee</strong><br><small style="color: #666;">Join our accelerator program</small></div>
+        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong>Become a Mentor</strong><br><small style="color: #666;">Share your expertise</small></div>
+        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong>Partner With Us</strong><br><small style="color: #666;">Collaborate on our mission</small></div>
       </div>
     </div>
 
