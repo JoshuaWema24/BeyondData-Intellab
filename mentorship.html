@@ -10,6 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+  .mentor-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .mentor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+  }
+  .cta-button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .cta-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+</style>
 <body>
 
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -155,7 +172,195 @@
             </div>
         </div>
     </section>
+    <section style="padding: 60px 20px; font-family: sans-serif; background-color: #0f172a; color: #ffffff;">
+  <div style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: white;">The Mentorship Process</h2>
+    <p style="font-size: 1.1rem; color: #94a3b8;">Your journey from application to impact</p>
+  </div>
 
+  <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+    
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1);">
+      <span style="font-size: 2rem; font-weight: bold; color: #60a5fa;">01</span>
+      <div>
+        <h3 style="margin: 0; margin-bottom: 5px; color: white;">Application</h3>
+        <p style="margin: 0; color: #cbd5e1;">Submit your mentor application with your background and areas of expertise</p>
+      </div>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1);">
+      <span style="font-size: 2rem; font-weight: bold; color: #60a5fa;">02</span>
+      <div>
+        <h3 style="margin: 0; margin-bottom: 5px;color: white;">Interview & Onboarding</h3>
+        <p style="margin: 0; color: #cbd5e1;">Brief conversation and orientation to our mentorship model</p>
+      </div>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1);">
+      <span style="font-size: 2rem; font-weight: bold; color: #60a5fa;">03</span>
+      <div>
+        <h3 style="margin: 0; margin-bottom: 5px; color:white ">Mentee Matching</h3>
+        <p style="margin: 0; color: #cbd5e1;">We carefully match you with 3-5 mentees based on goals and expertise</p>
+      </div>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1);">
+      <span style="font-size: 2rem; font-weight: bold; color: #60a5fa;">04</span>
+      <div>
+        <h3 style="margin: 0; margin-bottom: 5px; color:white">8-Week Journey</h3>
+        <p style="margin: 0; color: #cbd5e1;">Guide your mentees through the accelerator program</p>
+      </div>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1);">
+      <span style="font-size: 2rem; font-weight: bold; color: #60a5fa;">05</span>
+      <div>
+        <h3 style="margin: 0; margin-bottom: 5px; color:white">Ongoing Support</h3>
+        <p style="margin: 0; color: #cbd5e1;">Continue supporting mentees beyond the program if desired</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="font-family: sans-serif; color: #1a1a1a; padding: 20px; background-color: #ffffff; max-width: 900px; margin: auto;">
+  
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h1 style="margin: 0 0 10px 0;">Mentor Responsibilities</h1>
+    <p style="color: #666; font-size: 1.1em; margin: 0;">What we expect from our mentors</p>
+  </div>
+
+  <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 40px;">
+    
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Regular Check-Ins
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Meet with your mentees at least twice monthly (video or in-person)</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Responsive Communication
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Respond to mentee messages within 48 hours</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Career Guidance
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Provide advice on career paths, job search, and professional development</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Skill Development
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Share industry insights and practical knowledge from your experience</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Goal Setting
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Help mentees set and work towards realistic, achievable goals</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Project Support
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Guide mentees through their capstone projects and assignments</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Networking Support
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Introduce mentees to relevant contacts when appropriate</p>
+    </div>
+
+    <div style="background-color: #f0f4ff; padding: 25px; border-radius: 12px;">
+      <h3 style="margin-top: 0; display: flex; align-items: center; font-size: 1.2em;">
+        <span style="color: #0066ff; margin-right: 10px;">✓</span> Feedback & Encouragement
+      </h3>
+      <p style="color: #444; margin-bottom: 0; line-height: 1.5;">Provide constructive feedback and moral support throughout</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; background-color: #f0f4ff; padding: 20px; border-radius: 12px;">
+    <p style="margin: 0; font-weight: bold; font-size: 1.1em;">
+      Time Commitment: <span style="font-weight: normal;">Approximately 3-4 hours per month (varies by mentee needs)</span>
+    </p>
+  </div>
+
+</section>
+
+<section style="font-family: sans-serif; color: #1a1a1a; padding: 40px 20px; background-color: #f9f9f9;">
+  
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 2.5em; margin-bottom: 10px;">Mentor Testimonials</h2>
+    <p style="color: #555; font-size: 1.2em;">Hear from our community of mentors</p>
+  </div>
+
+  <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1200px; margin: auto;">
+    
+    <div class="mentor-card" style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee;">
+      <div style="color: #ffc107; font-size: 1.5em; margin-bottom: 15px;">★★★★★</div>
+      <p style="font-style: italic; color: #333; line-height: 1.6; margin-bottom: 25px;">"Mentoring with BeyondData has been one of the most rewarding experiences of my career. Seeing my mentees grow and succeed is incredibly fulfilling."</p>
+      <div style="display: flex; align-items: center;">
+        <div style="background: #0056b3; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">CA</div>
+        <div>
+          <div style="font-weight: bold;">Dr. Chioma Adebayo</div>
+          <div style="color: #666; font-size: 0.9em;">Tech Lead, Microsoft</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentor-card" style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee;">
+      <div style="color: #ffc107; font-size: 1.5em; margin-bottom: 15px;">★★★★★</div>
+      <p style="font-style: italic; color: #333; line-height: 1.6; margin-bottom: 25px;">"The program makes mentorship accessible and impactful. The structure and support from BeyondData made it easy for me to give back meaningfully."</p>
+      <div style="display: flex; align-items: center;">
+        <div style="background: #0056b3; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">DO</div>
+        <div>
+          <div style="font-weight: bold;">David Osei</div>
+          <div style="color: #666; font-size: 0.9em;">Founder, African Startup</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentor-card" style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee;">
+      <div style="color: #ffc107; font-size: 1.5em; margin-bottom: 15px;">★★★★★</div>
+      <p style="font-style: italic; color: #333; line-height: 1.6; margin-bottom: 25px;">"I've learned as much from my mentees as they've learned from me. The fresh perspectives and enthusiasm they bring are inspiring."</p>
+      <div style="display: flex; align-items: center;">
+        <div style="background: #0056b3; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">FH</div>
+        <div>
+          <div style="font-weight: bold;">Fatima Hassan</div>
+          <div style="color: #666; font-size: 0.9em;">Product Manager, Flutterwave</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+ <section style="font-family: sans-serif; background: linear-gradient(90deg, #2e5bff, #ff6b35); padding: 80px 20px; text-align: center; color: #ffffff;">
+  
+  <div style="font-size: 3em; margin-bottom: 20px;">
+    ❤️🤝
+  </div>
+
+  <h2 style="font-size: 2.5em; margin: 0 0 20px 0;">Ready to Make an Impact?</h2>
+  
+  <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.5; opacity: 0.9;">
+    Join 500+ professionals empowering Africa's next generation of digital leaders. Your expertise can change lives.
+  </p>
+
+  <a href="#" class="cta-button" style="display: inline-block; background: #ffffff; color: #0056b3; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em;">
+    Apply to Become a Mentor &rarr;
+  </a>
+
+</section>
     <!-- FOOTER -->
     <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
