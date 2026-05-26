@@ -158,20 +158,29 @@ h3 {
     z-index: 1002;
 }
 
-.logo-icon {
-    background: var(--blue-tech);
-    color: var(--white);
-    font-weight: 800;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-}
+.logo-block {
+    display: inline-block;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
 
-.logo-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-heading);
-}
+  .logo-block:hover {
+    opacity: 0.8;
+  }
+
+  .logo-icon img {
+    max-width: 100%;
+    height: auto;      /* Keeps the aspect ratio perfect */
+    width: 250px;      /* Adjust as needed for your header */
+    display: block;
+  }
+
+  /* Responsive adjustment for mobile */
+  @media (max-width: 768px) {
+    .logo-icon img {
+      width: 200px;    /* Slightly smaller on mobile */
+    }
+  }
 
 .nav-links {
     display: flex;
