@@ -45,94 +45,77 @@
     </nav>
 
     <!-- MAIN APP FORM CONTENT -->
-    <section class="section-padding" style="background-color: var(--bg-light);">
-        <div class="container" style="max-width: 760px; text-align: center;">
-            <span class="hero-badge" style="background: rgba(249, 115, 22, 0.1); color: var(--accent-orange);">Intake Open May 25th</span>
-            <h1 style="font-size: clamp(2rem, 5vw, 2.75rem); margin-top: 16px; margin-bottom: 12px;">Ecosystem Intake Form</h1>
-            <p class="section-subtitle">Cohort 1 launch kicks off officially on June 15th, 2026. Submit your evaluation details below.</p>
+<section class="section-padding" style="background-color: var(--bg-light);">
+    <div class="container" style="max-width: 900px; text-align: center;">
+        <span class="hero-badge" style="background: rgba(249, 115, 22, 0.1); color: var(--accent-orange);">Intake Open May 25th</span>
+        <h1 style="margin-top: 16px; margin-bottom: 12px;">Choose Your Application Path</h1>
+        <p class="section-subtitle" style="margin-bottom: 40px;">Cohort 1 launch kicks off officially on June 15th, 2026. Select the option that best fits your intent.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
             
-            <div class="form-card" style="border-top: 4px solid var(--blue-tech);">
-                <form onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label>Full Legal Name</label>
-                        <input type="text" class="form-control" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" required placeholder="name@domain.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Target Role Profile</label>
-                        <select class="form-control" id="roleSelector">
-                            <option value="mentee">Apply as a Mentee (Cohort Participant)</option>
-                            <option value="mentor">Apply as a Mentor</option>
-                            <option value="partner">Strategic Partner Alignment</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Statement of Intent & Motivation</label>
-                        <textarea class="form-control" rows="5" required placeholder="Outline why you align with BeyondData Intellab's cohort goals..."></textarea>
-                    </div>
-                    
-                    <div style="background-color: var(--bg-light); padding: 16px; border-radius: 8px; font-size: 0.85rem; color: var(--text-body); margin-bottom: 24px; border: 1px solid rgba(0, 98, 255, 0.08); line-height: 1.5; text-align: left;">
-                        ℹ️ <strong>Review Notice:</strong> Intake screening evaluation reviews submissions against motivation, commitment, and future alignment indicators. You will be updated automatically via email.
-                    </div>
+            <div class="form-card" style="border-top: 4px solid var(--blue-tech); padding: 30px;">
+                <h3>Apply as a Mentee</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">Join the cohort to accelerate your growth and gain access to expert mentorship.</p>
+                <a href="https://forms.gle/CD3dcRnz5wAHut1G7" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentee</a>
+            </div>
 
-                    <button type="submit" class="btn btn-pill-gradient" style="width: 100%; border-radius: 8px; padding: 14px;">Log My Application Details</button>
-                </form>
+            <div class="form-card" style="border-top: 4px solid var(--accent-orange); padding: 30px;">
+                <h3>Apply as a Mentor</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">Share your expertise and guide the next generation of African tech leaders.</p>
+                <a href="https://forms.gle/5q41yEuo8DNPv3gZ9" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentor</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <footer style="background-color: #054684; color: white; padding: 50px 20px; font-family: sans-serif;">
+        <div class="footer-inner" style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
+            <div style="flex: 1; min-width: 260px; max-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                     <div class="logo-icon">
+    <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
+  </div>
+                </div>
+                <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
+                    <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+                    <li>About Us</li>
+                    <li>Programs</li>
+                    <li>Mentorship</li>
+                    <li>Opportunities</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Contact</h3>
+                <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+                <p style="opacity: 0.8;">Mombasa, Kenya</p>
+                <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
             </div>
         </div>
-    </section>
 
-       <!-- FOOTER -->
-    <footer style="background-color: #0b1a33; color: white; padding: 50px 20px; font-family: sans-serif;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-        <div style="background-color: #007bff; padding: 8px 12px; border-radius: 6px; font-weight: bold;">BD</div>
-        <h2 style="margin: 0; font-size: 1.2rem;color: white;">BeyondData Intellab</h2>
-      </div>
-      <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
-      <div style="display: flex; gap: 10px; margin-top: 20px;">
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
-      </div>
-    </div>
+        <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+            <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
+            <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+            <div class="newsletter-row">
+                <input type="email" placeholder="Enter your email" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <button style="background:#f66530; height: 40px;width: 120px; border-style: none;
+                border-radius: 10px;">Subscribe</button>
+            </div>
+        </div>
 
-    <div>
-      <h3 style="margin-top: 0;color: white;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
-        <li>About Us</li>
-        <li>Programs</li>
-        <li>Mentorship</li>
-        <li>Opportunities</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 style="margin-top: 0;color: white;">Contact</h3>
-      <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-      <p style="opacity: 0.8;">Nairobi, Kenya</p>
-      <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
-    </div>
-  </div>
-
-  <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
-    <h3 style="margin-top: 0;color: white;">Stay Updated</h3>
-    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-    <div style="display: flex; gap: 10px; max-width: 500px;">
-      <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #ffffff11; color: white;">
-      <button style="background: linear-gradient(to right, #ff7e5f, #feb47b); border: none; padding: 12px 25px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer;">Subscribe</button>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-    &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
-  </div>
-</footer>
+        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
+            &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
+        </div>
+    </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
