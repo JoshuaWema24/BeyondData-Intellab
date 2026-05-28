@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentee Application — Digital Intelligence Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --brand:       #054684;
+      --brand-dark:  #002d5e;
+      --brand-light: #e8f0f9;
+      --accent:      #f66530;
+      --accent-dark: #e05525;
+      --accent-pale: #fef0eb;
+      --white:       #ffffff;
+      --bg:          #f4f6fb;
+      --surface:     #ffffff;
+      --border:      #e2e6ef;
+      --border-dark: #c8cedd;
+      --text:        #1a1f2e;
+      --muted:       #5a6378;
+      --hint:        #9aa0b0;
+      --success:     #0f6e56;
+      --success-bg:  #e1f5ee;
+      --r-sm:        8px;
+      --r-md:        12px;
+      --r-lg:        18px;
+      --r-xl:        24px;
+      --shadow-sm:   0 1px 3px rgba(5,70,132,.08), 0 1px 2px rgba(5,70,132,.04);
+      --shadow-md:   0 4px 16px rgba(5,70,132,.10), 0 2px 6px rgba(5,70,132,.06);
+      --shadow-lg:   0 12px 40px rgba(5,70,132,.14), 0 4px 12px rgba(5,70,132,.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ── PAGE LAYOUT ── */
+    .page-wrapper {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #054684 0%, #002d5e 50%, #001a3a 100%);
+      padding: 2.5rem 1rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,101,48,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    .org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 100px;
+      padding: .35rem 1rem;
+      font-size: .75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: rgba(255,255,255,.9);
+    }
+
+    .org-badge span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: .6rem;
+      color: #fff;
+    }
+
+    .page-subtitle {
+      font-size: .9rem;
+      opacity: .7;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ── STEP PROGRESS ── */
+    .progress-wrap {
+      background: rgba(255,255,255,.1);
+      border-radius: 100px;
+      height: 4px;
+      margin: 1.5rem 0 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 100px;
+      transition: width .45s cubic-bezier(.4,0,.2,1);
+      width: 20%;
+    }
+
+    .step-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: .5rem;
+      padding: 0 2px;
+    }
+
+    .step-label {
+      font-size: .68rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: color .2s;
+    }
+
+    .step-label.active { color: #fff; font-weight: 500; }
+    .step-label.done   { color: rgba(255,255,255,.75); }
+
+    /* ── CARD ── */
+    .form-card {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+
+    /* ── SECTION TABS ── */
+    .tab-nav {
+      display: flex;
+      border-bottom: 1.5px solid var(--border);
+      background: #fafbfd;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-nav::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      padding: .9rem 1.3rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--hint);
+      border-bottom: 2.5px solid transparent;
+      margin-bottom: -1.5px;
+      white-space: nowrap;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .tab-btn .tab-num {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      font-size: .65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--border);
+      color: var(--muted);
+      font-weight: 600;
+      transition: all .2s;
+      flex-shrink: 0;
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab-btn.active .tab-num {
+      background: var(--accent-pale);
+      color: var(--accent);
+    }
+
+    .tab-btn.done {
+      color: var(--brand);
+      border-bottom-color: var(--brand-light);
+    }
+
+    .tab-btn.done .tab-num {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    /* ── FORM BODY ── */
+    .form-body { padding: 2rem 2rem 1.5rem; }
+
+    @media (max-width: 600px) {
+      .form-body { padding: 1.5rem 1.2rem 1.2rem; }
+    }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* ── SECTION HEADER ── */
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .sec-icon {
+      width: 42px; height: 42px;
+      border-radius: var(--r-md);
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .sec-meta {}
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--brand);
+      line-height: 1.2;
+    }
+
+    .sec-desc {
+      font-size: .8rem;
+      color: var(--hint);
+      margin-top: .15rem;
+    }
+
+    /* ── FORM ELEMENTS ── */
+    .fg { margin-bottom: 1.1rem; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.1rem; }
+    .fg-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.1rem; }
+
+    @media (max-width: 580px) {
+      .fg-row, .fg-row3 { grid-template-columns: 1fr; }
+    }
+
+    label.lbl {
+      display: block;
+      font-size: .77rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: .45rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: .7rem .95rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      background: var(--white);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .88rem;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      appearance: none;
+    }
+
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="tel"]:hover,
+    input[type="number"]:hover,
+    select:hover,
+    textarea:hover {
+      border-color: var(--border-dark);
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3.5px rgba(246,101,48,.13);
+      background: var(--accent-pale);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239aa0b0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.55;
+    }
+
+    /* ── RADIO / CHECKBOX TILES ── */
+    .tile-grid {
+      display: grid;
+      gap: .6rem;
+    }
+
+    .tile-grid.cols2 { grid-template-columns: 1fr 1fr; }
+    .tile-grid.cols3 { grid-template-columns: 1fr 1fr 1fr; }
+    .tile-grid.cols4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+    @media (max-width: 580px) {
+      .tile-grid.cols3,
+      .tile-grid.cols4 { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 380px) {
+      .tile-grid.cols2,
+      .tile-grid.cols3,
+      .tile-grid.cols4 { grid-template-columns: 1fr; }
+    }
+
+    .tile {
+      position: relative;
+    }
+
+    .tile input[type="radio"],
+    .tile input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .tile label {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .6rem .85rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      font-size: .84rem;
+      color: var(--muted);
+      transition: all .2s;
+      background: var(--white);
+      line-height: 1.3;
+      user-select: none;
+    }
+
+    .tile label::before {
+      content: '';
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border-dark);
+      flex-shrink: 0;
+      transition: all .2s;
+    }
+
+    .tile.check label::before {
+      border-radius: 4px;
+    }
+
+    .tile label:hover {
+      border-color: var(--border-dark);
+      background: #fafbfd;
+    }
+
+    .tile input:checked + label {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      color: var(--accent-dark);
+      font-weight: 500;
+    }
+
+    .tile input:checked + label::before {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: inset 0 0 0 3px var(--white);
+    }
+
+    .tile.check input:checked + label::before {
+      box-shadow: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1.5px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    /* ── CONSENT ── */
+    .consent-box {
+      display: flex;
+      gap: .85rem;
+      align-items: flex-start;
+      background: var(--brand-light);
+      border: 1.5px solid rgba(5,70,132,.2);
+      border-radius: var(--r-md);
+      padding: 1rem 1.1rem;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+
+    .consent-box:hover { border-color: rgba(5,70,132,.4); }
+
+    .consent-box input[type="checkbox"] {
+      width: 18px !important;
+      height: 18px !important;
+      accent-color: var(--brand);
+      flex-shrink: 0;
+      margin-top: 1px;
+      cursor: pointer;
+    }
+
+    .consent-text {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .consent-text strong {
+      color: var(--brand);
+    }
+
+    /* ── NAVIGATION ── */
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1.5px solid var(--border);
+      gap: 1rem;
+    }
+
+    .btn-prev {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .65rem 1.25rem;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-prev:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .btn-next {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .7rem 1.6rem;
+      background: var(--accent);
+      border: none;
+      border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 4px 12px rgba(246,101,48,.3);
+    }
+
+    .btn-next:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(246,101,48,.35);
+    }
+
+    .btn-next:active { transform: translateY(0); }
+
+    .step-counter {
+      font-size: .78rem;
+      color: var(--hint);
+      font-weight: 500;
+    }
+
+    /* ── SUBMIT BUTTON ── */
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .9rem;
+      background: var(--brand);
+      border: none;
+      border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all .25s;
+      box-shadow: 0 4px 14px rgba(5,70,132,.3);
+    }
+
+    .btn-submit:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(5,70,132,.35);
+    }
+
+    .btn-submit:active { transform: translateY(0); }
+
+    /* ── SUCCESS STATE ── */
+    .success-view {
+      display: none;
+      text-align: center;
+      padding: 3.5rem 2rem 4rem;
+    }
+
+    .success-view.show { display: block; }
+
+    .success-ring {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--success-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .success-check {
+      width: 36px; height: 36px;
+      color: var(--success);
+    }
+
+    .success-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: .6rem;
+    }
+
+    .success-sub {
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 380px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.65;
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: var(--success-bg);
+      color: var(--success);
+      border-radius: 100px;
+      padding: .4rem 1rem;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+
+    /* ── OTHER-SPECIFY ── */
+    .other-input {
+      margin-top: .6rem;
+    }
+
+    /* ── FIELD VALIDATION ── */
+    .field-error {
+      font-size: .75rem;
+      color: #c0392b;
+      margin-top: .3rem;
+      display: none;
+    }
+
+    input.invalid, select.invalid, textarea.invalid {
+      border-color: #e24b4a !important;
+    }
+
+    /* ── FOOTER ── */
+    .form-footer {
+      text-align: center;
+      padding: 1rem 2rem 1.5rem;
+      font-size: .76rem;
+      color: var(--hint);
+      border-top: 1px solid var(--border);
+      background: #fafbfd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="org-badge"><span></span>Digital Intelligence Lab</div>
+      <h1 class="page-title">Mentee Application</h1>
+      <p class="page-subtitle">Join our mentorship program and take the next step in your digital journey.</p>
+      <div class="progress-wrap">
+        <div class="progress-fill" id="pbar"></div>
+      </div>
+      <div class="step-labels">
+        <span class="step-label active" data-step="0">Personal</span>
+        <span class="step-label" data-step="1">Track</span>
+        <span class="step-label" data-step="2">Learning</span>
+        <span class="step-label" data-step="3">Preferences</span>
+        <span class="step-label" data-step="4">Motivation</span>
+      </div>
+    </div>
+
+    <!-- Form Card -->
+    <div class="form-card">
+
+      <!-- Tab Navigation -->
+      <nav class="tab-nav" role="tablist">
+        <button class="tab-btn active" data-step="0" role="tab" aria-selected="true">
+          <span class="tab-num">1</span> Personal
+        </button>
+        <button class="tab-btn" data-step="1" role="tab" aria-selected="false">
+          <span class="tab-num">2</span> Track
+        </button>
+        <button class="tab-btn" data-step="2" role="tab" aria-selected="false">
+          <span class="tab-num">3</span> Learning
+        </button>
+        <button class="tab-btn" data-step="3" role="tab" aria-selected="false">
+          <span class="tab-num">4</span> Preferences
+        </button>
+        <button class="tab-btn" data-step="4" role="tab" aria-selected="false">
+          <span class="tab-num">5</span> Motivation
+        </button>
+      </nav>
+
+      <!-- Form Body -->
+      <div class="form-body" id="formBody">
+
+        <!-- SECTION 1: Personal Information -->
+        <div class="section active" id="sec-0">
+          <div class="sec-header">
+            <div class="sec-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div class="sec-meta">
+              <div class="sec-title">Personal Information</div>
+              <div class="sec-desc">Tell us a bit about yourself</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Amina Hassan" required>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl" for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="fg">
+              <label class="lbl" for="phone">Phone Number (WhatsApp preferred)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX">
+            </div>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl" for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="">Select gender…</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label class="lbl" for="age">Age</label>
+              <input type="number" id="age" name="age" placeholder="Your age" min="14" max="70">
+            </div>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl" for="county">County / City of Residence</label>
+              <input type="text" id="county" name="county" placeholder="e.g. Mombasa, Nairobi">
+            </div>
+            <div class="fg">
+              <label class="lbl">Based in Mombasa County?</label>
+              <div class="tile-grid cols2" style="margin-top:.1rem">
+                <div class="tile">
+                  <input type="radio" name="mombasa" id="mob_y" value="yes">
+                  <label for="mob_y">Yes</label>
+                </div>
+                <div class="tile">
+                  <input type="radio" name="mombasa" id="mob_n" value="no">
+                  <label for="mob_n">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl" for="education">Highest Level of Education</label>
+              <select id="education" name="education">
+                <option value="">Select level…</option>
+                <option>High School</option>
+                <option>TVET / Diploma</option>
+                <option>Undergraduate</option>
+                <option>Graduate</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label class="lbl" for="status">Current Status</label>
+              <select id="status" name="status">
+                <option value="">Select status…</option>
+                <option>Student</option>
+                <option>Unemployed</option>
+                <option>Employed</option>
+                <option>Self-Employed / Entrepreneur</option>
+                <option>Freelancer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="nav-row">
+            <span class="step-counter">Step 1 of 5</span>
+            <button class="btn-next" onclick="goTo(1)">
+              Next
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Main Track Selection -->
+        <div class="section" id="sec-1">
+          <div class="sec-header">
+            <div class="sec-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="sec-meta">
+              <div class="sec-title">Main Track Selection</div>
+              <div class="sec-desc">Choose the path that best fits your journey</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl">Which category best describes you?</label>
+            <div class="tile-grid cols2">
+              <div class="tile">
+                <input type="radio" name="track" id="t1" value="Digital Beginners">
+                <label for="t1">Digital Beginners</label>
+              </div>
+              <div class="tile">
+                <input type="radio" name="track" id="t2" value="Transitioning Graduates">
+                <label for="t2">Transitioning Graduates</label>
+              </div>
+              <div class="tile">
+                <input type="radio" name="track" id="t3" value="Young Entrepreneurs">
+                <label for="t3">Young Entrepreneurs</label>
+              </div>
+              <div class="tile">
+                <input type="radio" name="track" id="t4" value="Career Switchers">
+                <label for="t4">Career Switchers</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="track_why">Why did you choose this category?</label>
+            <textarea id="track_why" name="track_why" placeholder="Briefly explain your reason for selecting this track…" rows="3"></textarea>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="challenges">Current digital or professional challenges</label>
+            <textarea id="challenges" name="challenges" placeholder="What obstacles are you currently facing in your digital or career journey?" rows="3"></textarea>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="skills_wanted">Skills you hope to gain from this program</label>
+            <textarea id="skills_wanted" name="skills_wanted" placeholder="What specific skills or knowledge do you want from this mentorship?" rows="3"></textarea>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-prev" onclick="goTo(0)">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+              Back
+            </button>
+            <span class="step-counter">Step 2 of 5</span>
+            <button class="btn-next" onclick="goTo(2)">
+              Next
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Learning Interests -->
+        <div class="section" id="sec-2">
+          <div class="sec-header">
+            <div class="sec-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="sec-meta">
+              <div class="sec-title">Learning Interests</div>
+              <div class="sec-desc">Help us understand your background and goals</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl">Areas of Interest <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--hint)">(select all that apply)</span></label>
+            <div class="tile-grid cols2">
+              <div class="tile check"><input type="checkbox" id="ai1" name="interests" value="Data Analysis"><label for="ai1">Data Analysis</label></div>
+              <div class="tile check"><input type="checkbox" id="ai2" name="interests" value="Artificial Intelligence"><label for="ai2">Artificial Intelligence</label></div>
+              <div class="tile check"><input type="checkbox" id="ai3" name="interests" value="Programming"><label for="ai3">Programming</label></div>
+              <div class="tile check"><input type="checkbox" id="ai4" name="interests" value="Digital Marketing"><label for="ai4">Digital Marketing</label></div>
+              <div class="tile check"><input type="checkbox" id="ai5" name="interests" value="Entrepreneurship"><label for="ai5">Entrepreneurship</label></div>
+              <div class="tile check"><input type="checkbox" id="ai6" name="interests" value="Graphic Design"><label for="ai6">Graphic Design</label></div>
+              <div class="tile check"><input type="checkbox" id="ai7" name="interests" value="Cybersecurity"><label for="ai7">Cybersecurity</label></div>
+              <div class="tile check"><input type="checkbox" id="ai8" name="interests" value="Business Systems"><label for="ai8">Business Systems &amp; Productivity Tools</label></div>
+              <div class="tile check"><input type="checkbox" id="ai9" name="interests" value="Robotics / IoT"><label for="ai9">Robotics / IoT</label></div>
+              <div class="tile check"><input type="checkbox" id="ai10" name="interests" value="Career Readiness"><label for="ai10">Career Readiness</label></div>
+            </div>
+            <div class="other-input">
+              <input type="text" name="interests_other" placeholder="Other — please specify">
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="fg">
+            <label class="lbl">Current digital skills level</label>
+            <div class="tile-grid cols3">
+              <div class="tile"><input type="radio" name="skill_level" id="sk1" value="Beginner"><label for="sk1">Beginner</label></div>
+              <div class="tile"><input type="radio" name="skill_level" id="sk2" value="Intermediate"><label for="sk2">Intermediate</label></div>
+              <div class="tile"><input type="radio" name="skill_level" id="sk3" value="Advanced"><label for="sk3">Advanced</label></div>
+            </div>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl">Own or have access to a computer/laptop?</label>
+              <div class="tile-grid cols2">
+                <div class="tile"><input type="radio" name="laptop" id="lp_y" value="Yes"><label for="lp_y">Yes</label></div>
+                <div class="tile"><input type="radio" name="laptop" id="lp_n" value="No"><label for="lp_n">No</label></div>
+              </div>
+            </div>
+            <div class="fg">
+              <label class="lbl">Reliable internet access?</label>
+              <div class="tile-grid cols3">
+                <div class="tile"><input type="radio" name="internet" id="in_y" value="Yes"><label for="in_y">Yes</label></div>
+                <div class="tile"><input type="radio" name="internet" id="in_n" value="No"><label for="in_n">No</label></div>
+                <div class="tile"><input type="radio" name="internet" id="in_s" value="Sometimes"><label for="in_s">Sometimes</label></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-prev" onclick="goTo(1)">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+              Back
+            </button>
+            <span class="step-counter">Step 3 of 5</span>
+            <button class="btn-next" onclick="goTo(3)">
+              Next
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- SECTION 4: Mentorship Preferences -->
+        <div class="section" id="sec-3">
+          <div class="sec-header">
+            <div class="sec-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <div class="sec-meta">
+              <div class="sec-title">Mentorship Preferences</div>
+              <div class="sec-desc">Tell us how you'd like to learn</div>
+            </div>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label class="lbl">Preferred mentorship format</label>
+              <div class="tile-grid cols2" style="margin-top:.1rem">
+                <div class="tile"><input type="radio" name="mentor_mode" id="mm_v" value="Virtual"><label for="mm_v">Virtual</label></div>
+                <div class="tile"><input type="radio" name="mentor_mode" id="mm_p" value="In-Person"><label for="mm_p">In-Person <span style="font-size:.75rem;opacity:.7">(Mombasa only)</span></label></div>
+              </div>
+            </div>
+            <div class="fg">
+              <label class="lbl">Preferred learning schedule</label>
+              <div class="tile-grid cols2" style="margin-top:.1rem">
+                <div class="tile"><input type="radio" name="schedule" id="sc1" value="Weekdays"><label for="sc1">Weekdays</label></div>
+                <div class="tile"><input type="radio" name="schedule" id="sc2" value="Weekends"><label for="sc2">Weekends</label></div>
+                <div class="tile"><input type="radio" name="schedule" id="sc3" value="Evenings"><label for="sc3">Evenings</label></div>
+                <div class="tile"><input type="radio" name="schedule" id="sc4" value="Flexible"><label for="sc4">Flexible</label></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl">Weekly time you can dedicate</label>
+            <div class="tile-grid cols4">
+              <div class="tile"><input type="radio" name="time_commit" id="tc1" value="1-2hrs"><label for="tc1">1–2 hrs</label></div>
+              <div class="tile"><input type="radio" name="time_commit" id="tc2" value="3-5hrs"><label for="tc2">3–5 hrs</label></div>
+              <div class="tile"><input type="radio" name="time_commit" id="tc3" value="6-10hrs"><label for="tc3">6–10 hrs</label></div>
+              <div class="tile"><input type="radio" name="time_commit" id="tc4" value="10+hrs"><label for="tc4">10+ hrs</label></div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl">Preferred learning language</label>
+            <div class="tile-grid cols3">
+              <div class="tile"><input type="radio" name="language" id="lg1" value="English"><label for="lg1">English</label></div>
+              <div class="tile"><input type="radio" name="language" id="lg2" value="Swahili"><label for="lg2">Swahili</label></div>
+              <div class="tile"><input type="radio" name="language" id="lg3" value="Both"><label for="lg3">Both</label></div>
+            </div>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-prev" onclick="goTo(2)">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+              Back
+            </button>
+            <span class="step-counter">Step 4 of 5</span>
+            <button class="btn-next" onclick="goTo(4)">
+              Next
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- SECTION 5: Motivation & Commitment -->
+        <div class="section" id="sec-4">
+          <div class="sec-header">
+            <div class="sec-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="sec-meta">
+              <div class="sec-title">Motivation &amp; Commitment</div>
+              <div class="sec-desc">Share your goals and commit to the journey</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="why_join">Why do you want to join this program?</label>
+            <textarea id="why_join" name="why_join" placeholder="Share what draws you to the Digital Intelligence Lab Mentorship Program…" rows="3"></textarea>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="goals">Career or business goals (next 2 years)</label>
+            <textarea id="goals" name="goals" placeholder="Describe where you see yourself professionally in 2 years…" rows="3"></textarea>
+          </div>
+
+          <div class="fg">
+            <label class="lbl" for="empowerment">What does digital empowerment mean to you?</label>
+            <textarea id="empowerment" name="empowerment" placeholder="In your own words, what does being digitally empowered look like?" rows="3"></textarea>
+          </div>
+
+          <div class="fg">
+            <label class="lbl">Committed to active participation in sessions?</label>
+            <div class="tile-grid cols2">
+              <div class="tile"><input type="radio" name="committed" id="cm_y" value="Yes"><label for="cm_y">Yes, I commit</label></div>
+              <div class="tile"><input type="radio" name="committed" id="cm_n" value="No"><label for="cm_n">No</label></div>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="fg">
+            <label class="lbl">Consent Declaration</label>
+            <label class="consent-box" for="consent">
+              <input type="checkbox" id="consent" name="consent">
+              <span class="consent-text">
+                <strong>I confirm</strong> that the information provided is accurate and I commit to participating actively and respectfully in the Digital Intelligence Lab Mentorship Program.
+              </span>
+            </label>
+          </div>
+
+          <div class="nav-row">
+            <button class="btn-prev" onclick="goTo(3)">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+              Back
+            </button>
+            <span class="step-counter">Step 5 of 5</span>
+          </div>
+          <button class="btn-submit" onclick="submitForm()">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            Submit Application
+          </button>
+        </div>
+
+      </div><!-- /formBody -->
+
+      <!-- Success View -->
+      <div class="success-view" id="successView">
+        <div class="success-ring">
+          <svg class="success-check" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div class="success-title">Application Submitted!</div>
+        <p class="success-sub">Thank you for applying to the Digital Intelligence Lab Mentorship Program. We'll review your application and reach out to you via email shortly.</p>
+        <div class="success-badge">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 014.99 3h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L9 10.9a16 16 0 006.06 6.06l1.16-1.27a2 2 0 012.11-.45c.94.35 1.91.59 2.91.72A2 2 0 0122 17.92z"/></svg>
+          We'll be in touch soon
+        </div>
+      </div>
+
+      <div class="form-footer">
+        All information submitted is kept confidential and used solely for the mentorship program.
+      </div>
+
+    </div><!-- /form-card -->
+  </div><!-- /container -->
+</div><!-- /page-wrapper -->
+
+<script>
+  var current = 0;
+  var total = 5;
+
+  function updateUI(n) {
+    document.querySelectorAll('.section').forEach(function(s, i) {
+      s.classList.toggle('active', i === n);
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(b, i) {
+      b.classList.remove('active', 'done');
+      b.setAttribute('aria-selected', 'false');
+      if (i === n) { b.classList.add('active'); b.setAttribute('aria-selected', 'true'); }
+      else if (i < n) { b.classList.add('done'); }
+    });
+    document.querySelectorAll('.step-label').forEach(function(l, i) {
+      l.classList.remove('active', 'done');
+      if (i === n) l.classList.add('active');
+      else if (i < n) l.classList.add('done');
+    });
+    var pct = ((n + 1) / total * 100);
+    document.getElementById('pbar').style.width = pct + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goTo(n) {
+    current = n;
+    updateUI(n);
+  }
+
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.addEventListener('click', function() {
+      goTo(parseInt(this.dataset.step));
+    });
+  });
+
+  document.querySelectorAll('.step-label').forEach(function(l) {
+    l.addEventListener('click', function() {
+      goTo(parseInt(this.dataset.step));
+    });
+  });
+
+  function submitForm() {
+    var consent = document.getElementById('consent');
+    if (!consent.checked) {
+      var box = consent.closest('.consent-box');
+      box.style.borderColor = '#e24b4a';
+      box.style.background = '#fff5f5';
+      consent.focus();
+      return;
+    }
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('successView').classList.add('show');
+    document.getElementById('pbar').style.width = '100%';
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.add('done'); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Reset consent box style on change
+  document.getElementById('consent').addEventListener('change', function() {
+    var box = this.closest('.consent-box');
+    box.style.borderColor = '';
+    box.style.background = '';
+  });
+</script>
+
+</body>
+</html>
