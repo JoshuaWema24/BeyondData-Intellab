@@ -986,6 +986,64 @@
     </div><!-- /form-card -->
   </div>
 </div>
+<!-- SUCCESS POPUP -->
+
+<div id="success-popup"
+     class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+
+  <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-[90%] text-center animate-popup">
+
+
+<div class="w-20 h-20 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-10 h-10 text-green-600"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor">
+
+    <path stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 13l4 4L19 7"/>
+  </svg>
+</div>
+
+<h2 class="text-2xl font-bold text-slate-800 mb-2">
+  Application Submitted
+</h2>
+
+<p class="text-slate-500 mb-6">
+  Your mentor application has been submitted successfully.
+  Our team will review it and contact you soon.
+</p>
+
+<button onclick="closeSuccessPopup()"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition">
+  Continue
+</button>
+
+
+  </div>
+</div>
+
+<style>
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-popup {
+  animation: popupFade .25s ease;
+}
+</style>
+
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 <script>
    
@@ -1114,14 +1172,43 @@
 
       const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result.message || "Submission failed");
-      }
+     if (response.ok) {
 
-      console.log("✅ Application submitted:", result);
-      alert("Application submitted successfully!");
+// SHOW SUCCESS POPUP
+showSuccessPopup();
 
-      // Optional: reset form
+// OPTIONAL: RESET FORM FIELDS
+document.querySelectorAll("input, textarea").forEach(field => {
+
+
+if (
+  field.type !== "radio" &&
+  field.type !== "checkbox"
+) {
+  field.value = "";
+}
+
+if (
+  field.type === "radio" ||
+  field.type === "checkbox"
+) {
+  field.checked = false;
+}
+
+
+});
+
+console.log("Application submitted successfully");
+
+} else {
+
+const errorData = await response.json();
+
+alert(errorData.message || "Submission failed");
+}
+
+
+     
       document.getElementById("mentorForm").reset();
 
     } catch (error) {
@@ -1129,6 +1216,21 @@
       alert("Error submitting application: " + error.message);
     }
   };
+
+  function showSuccessPopup() {
+const popup = document.getElementById("success-popup");
+
+popup.classList.remove("hidden");
+popup.classList.add("flex");
+}
+
+function closeSuccessPopup() {
+const popup = document.getElementById("success-popup");
+
+popup.classList.remove("flex");
+popup.classList.add("hidden");
+}
+
 </script>
 
 </body>
