@@ -1152,7 +1152,7 @@ async function postApplication() {
       professionalBio: getValue('bio'),
       whyBecomeMentor: getValue('why_mentor'),
       skillsToHelpDevelop: getValue('skills_offer'),
-      yearsOfExperience: getValue('experience'),
+      yearsOfExperience: document.querySelector('input[name="experience"]:checked')?.value ?? "",
       digitalTransformationMotivation: getValue('africa_why'),
       mentorshipImpact: getValue('impact'),
 
