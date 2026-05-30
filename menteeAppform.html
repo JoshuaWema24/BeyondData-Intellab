@@ -1135,43 +1135,55 @@
   async function submitForm() {
   // Gather all form data
   const data = {
-    // Section 1: Personal Information
-    fullname: document.getElementById('fullname').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    gender: document.getElementById('gender').value,
-    age: document.getElementById('age').value,
-    county: document.getElementById('county').value.trim(),
-    mombasa: document.querySelector('input[name="mombasa"]:checked')?.value || '',
-    education: document.getElementById('education').value,
-    status: document.getElementById('status').value,
+  // Section 1: Personal Information
+  fullName:              document.getElementById('fullname').value.trim(),
+  email:                 document.getElementById('email').value.trim(),
+  phoneNumber:           document.getElementById('phone').value.trim(),
+  gender:                document.getElementById('gender').value,
+  age:                   Number(document.getElementById('age').value),
+  countyOrCity:          document.getElementById('county').value.trim(),
+  basedInMombasa:        document.querySelector('input[name="mombasa"]:checked')?.value === 'yes',
+  highestEducationLevel: document.getElementById('education').value,
+  currentStatus:         document.getElementById('status').value,
 
-    // Section 2: Track Selection
-    track: document.querySelector('input[name="track"]:checked')?.value || '',
-    track_why: document.getElementById('track_why').value.trim(),
-    challenges: document.getElementById('challenges').value.trim(),
-    skills_wanted: document.getElementById('skills_wanted').value.trim(),
+  // Section 2: Track Selection
+  selectedCategory:      document.querySelector('input[name="track"]:checked')?.value || '',
+  whyChooseCategory:     document.getElementById('track_why').value.trim(),
+  currentChallenges:     document.getElementById('challenges').value.trim(),
+  skillsToGain:          document.getElementById('skills_wanted').value.trim(),
 
-    // Section 3: Learning Interests
-    interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(el => el.value),
-    interests_other: document.querySelector('input[name="interests_other"]').value.trim(),
-    skill_level: document.querySelector('input[name="skill_level"]:checked')?.value || '',
-    laptop: document.querySelector('input[name="laptop"]:checked')?.value || '',
-    internet: document.querySelector('input[name="internet"]:checked')?.value || '',
+  // Section 3: Learning Interests
+  areasOfInterest:       Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(el => el.value),
+  otherInterest:         document.querySelector('input[name="interests_other"]').value.trim(),
+  digitalSkillLevel:     document.querySelector('input[name="skill_level"]:checked')?.value || '',
+  hasComputerAccess:     document.querySelector('input[name="laptop"]:checked')?.value || '',
+  internetAccess:        document.querySelector('input[name="internet"]:checked')?.value || '',
 
-    // Section 4: Mentorship Preferences
-    mentor_mode: document.querySelector('input[name="mentor_mode"]:checked')?.value || '',
-    schedule: document.querySelector('input[name="schedule"]:checked')?.value || '',
-    time_commit: document.querySelector('input[name="time_commit"]:checked')?.value || '',
-    language: document.querySelector('input[name="language"]:checked')?.value || '',
+  // Section 4: Mentorship Preferences
+  preferredMentorshipOption: document.querySelector('input[name="mentor_mode"]:checked')?.value || '',
+  preferredLearningSchedule: Array.from(document.querySelectorAll('input[name="schedule"]:checked')).map(el => el.value),
+  weeklyTimeCommitment:      (() => {
+    const v = document.querySelector('input[name="time_commit"]:checked')?.value;
+    const map = {
+      '1-2hrs':  '1-2 Hours',
+      '3-5hrs':  '3-5 Hours',
+      '6-10hrs': '6-10 Hours',
+      '10+hrs':  '10+ Hours',
+    };
+    return map[v] || '';
+  })(),
+  preferredLanguage:     document.querySelector('input[name="language"]:checked')?.value || '',
 
-    // Section 5: Motivation & Commitment
-    why_join: document.getElementById('why_join').value.trim(),
-    goals: document.getElementById('goals').value.trim(),
-    empowerment: document.getElementById('empowerment').value.trim(),
-    committed: document.querySelector('input[name="committed"]:checked')?.value || '',
-    consent: document.getElementById('consent').checked,
-  };
+  // Section 5: Motivation & Commitment
+  whyJoinProgram:            document.getElementById('why_join').value.trim(),
+  careerGoals:               document.getElementById('goals').value.trim(),
+  digitalEmpowermentMeaning: document.getElementById('empowerment').value.trim(),
+  committedToParticipation:  document.querySelector('input[name="committed"]:checked')?.value === 'Yes',
+  consentAccepted:           document.getElementById('consent').checked,
+
+
+  applicationStatus:     'Pending',
+};
 
   // Basic validation
   if (!data.fullname || !data.email) {
