@@ -1140,7 +1140,7 @@ async function postApplication() {
 
   } catch (error) {
     console.error("Error submitting application:", error.message);
-    showPopup("❌ Submission failed. Please try again.", "error");
+    showPopup("❌ Submission failed.", result,"error");
   }
 }
 
