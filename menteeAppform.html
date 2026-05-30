@@ -1132,6 +1132,14 @@
     });
   });
 
+  //next button functionality
+  function next() {
+    if (current < total - 1) {
+      current++;
+      updateUI(current);
+    }
+  }
+
   async function submitForm() {
   // Gather all form data
   const data = {
@@ -1181,13 +1189,17 @@
   committedToParticipation:  document.querySelector('input[name="committed"]:checked')?.value === 'Yes',
   consentAccepted:           document.getElementById('consent').checked,
 
-
+  // Extra Fields (schema default, no input needed — included for explicitness)
   applicationStatus:     'Pending',
 };
 
+
   // Basic validation
+  if (!data.fullName || !data.email) {
+    alert('Please fill in at least your full name and email before submitting.');
+    return;
   }
-  if (!data.consent) {
+  if (!data.consentAccepted) {
     alert('Please check the consent declaration before submitting.');
     return;
   }
