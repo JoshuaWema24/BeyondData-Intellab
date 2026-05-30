@@ -659,6 +659,9 @@
       border-top: 1px solid var(--border);
       background: #fafbfd;
     }
+    @keyframes spin {
+  to { transform: rotate(360deg); }
+}
   </style>
 </head>
 <body>
@@ -1073,7 +1076,7 @@
           <svg class="success-check" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
         </div>
         <div class="success-title">Application Submitted!</div>
-        <p class="success-sub">Thank you for applying to the Digital Intelligence Lab Mentorship Program. We'll review your application and reach out to you via email shortly.</p>
+        <p class="success-sub">Thank you for applying to  Beyonddata IntellaLab Program. We'll review your application and reach out to you via email shortly.</p>
         <div class="success-badge">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 014.99 3h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.91a2 2 0 01-.45 2.11L9 10.9a16 16 0 006.06 6.06l1.16-1.27a2 2 0 012.11-.45c.94.35 1.91.59 2.91.72A2 2 0 0122 17.92z"/></svg>
           We'll be in touch soon
@@ -1129,22 +1132,95 @@
     });
   });
 
-  function submitForm() {
-    var consent = document.getElementById('consent');
-    if (!consent.checked) {
-      var box = consent.closest('.consent-box');
-      box.style.borderColor = '#e24b4a';
-      box.style.background = '#fff5f5';
-      consent.focus();
-      return;
-    }
-    document.getElementById('formBody').style.display = 'none';
-    document.getElementById('successView').classList.add('show');
-    document.getElementById('pbar').style.width = '100%';
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.add('done'); });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  async function submitForm() {
+  // Gather all form data
+  const data = {
+    // Section 1: Personal Information
+    fullname: document.getElementById('fullname').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    gender: document.getElementById('gender').value,
+    age: document.getElementById('age').value,
+    county: document.getElementById('county').value.trim(),
+    mombasa: document.querySelector('input[name="mombasa"]:checked')?.value || '',
+    education: document.getElementById('education').value,
+    status: document.getElementById('status').value,
+
+    // Section 2: Track Selection
+    track: document.querySelector('input[name="track"]:checked')?.value || '',
+    track_why: document.getElementById('track_why').value.trim(),
+    challenges: document.getElementById('challenges').value.trim(),
+    skills_wanted: document.getElementById('skills_wanted').value.trim(),
+
+    // Section 3: Learning Interests
+    interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(el => el.value),
+    interests_other: document.querySelector('input[name="interests_other"]').value.trim(),
+    skill_level: document.querySelector('input[name="skill_level"]:checked')?.value || '',
+    laptop: document.querySelector('input[name="laptop"]:checked')?.value || '',
+    internet: document.querySelector('input[name="internet"]:checked')?.value || '',
+
+    // Section 4: Mentorship Preferences
+    mentor_mode: document.querySelector('input[name="mentor_mode"]:checked')?.value || '',
+    schedule: document.querySelector('input[name="schedule"]:checked')?.value || '',
+    time_commit: document.querySelector('input[name="time_commit"]:checked')?.value || '',
+    language: document.querySelector('input[name="language"]:checked')?.value || '',
+
+    // Section 5: Motivation & Commitment
+    why_join: document.getElementById('why_join').value.trim(),
+    goals: document.getElementById('goals').value.trim(),
+    empowerment: document.getElementById('empowerment').value.trim(),
+    committed: document.querySelector('input[name="committed"]:checked')?.value || '',
+    consent: document.getElementById('consent').checked,
+  };
+
+  // Basic validation
+  if (!data.fullname || !data.email) {
+    alert('Please fill in at least your full name and email before submitting.');
+    return;
+  }
+  if (!data.consent) {
+    alert('Please check the consent declaration before submitting.');
+    return;
   }
 
+  // Disable submit button and show loading state
+  const submitBtn = document.querySelector('.btn-submit');
+  const originalHTML = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      style="animation: spin 1s linear infinite;">
+      <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
+      <path d="M12 2a10 10 0 0 1 10 10" />
+    </svg>
+    Submitting…
+  `;
+
+  try {
+    const response = await fetch('https://intellab-backend.onrender.com/api/mentees', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Server error ${response.status}: ${errorBody}`);
+    }
+
+    // Show success view, hide form
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('successView').style.display = 'flex'; // or 'block' depending on your CSS
+
+  } catch (err) {
+    console.error('Submission failed:', err);
+    alert('Something went wrong submitting your application. Please check your connection and try again.\n\n' + err.message);
+
+    // Restore button
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalHTML;
+  }
+}
   // Reset consent box style on change
   document.getElementById('consent').addEventListener('change', function() {
     var box = this.closest('.consent-box');
