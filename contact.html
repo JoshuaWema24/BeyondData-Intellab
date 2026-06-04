@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | BeyondData Intellab</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-  /* Responsive grid: 2 columns on large screens, 1 column on smaller screens */
-  .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: sans-serif;
-  }
-
-  @media (max-width: 768px) {
+    /* Responsive grid: 2 columns on large screens, 1 column on smaller screens */
+    
     .contact-container {
-      grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: sans-serif;
     }
-  }
+    
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
 <body>
@@ -38,10 +40,10 @@
         <div class="container nav-container">
             <a href="#" class="logo-block">
                 <div class="logo-icon">
-    <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
-  </div>
+                    <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
+                </div>
             </a>
-            
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -64,197 +66,203 @@
     </nav>
 
     <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px 20px; text-align: center; font-family: sans-serif; background-color: #fcfcfc;">
-  
-  <div style="display: inline-flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 20px; padding: 6px 15px; margin-bottom: 20px; font-size: 14px; color: #555; background-color: #fff;">
-    <span style="margin-right: 8px;">💬</span>
-    <span>Get in Touch</span>
-  </div>
 
-  <h1 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">
-    Let's <span style="color: #054684;">Connect</span>
-  </h1>
+        <div style="display: inline-flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 20px; padding: 6px 15px; margin-bottom: 20px; font-size: 14px; color: #555; background-color: #fff;">
+            <span style="margin-right: 8px;">💬</span>
+            <span>Get in Touch</span>
+        </div>
 
-  <p style="font-size: 18px; color: #666; max-width: 600px; line-height: 1.6; margin: 0;">
-    Whether you're interested in joining our program, becoming a mentor, or partnering with us—we'd love to hear from you.
-  </p>
-  
-</section>
+        <h1 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">
+            Let's <span style="color: #054684;">Connect</span>
+        </h1>
 
-<section class="contact-container">
-  
-  <div>
-    <h2 style="font-size: 32px; margin-bottom: 10px;">Send Us a Message</h2>
-    <p style="color: #666; margin-bottom: 30px;">Fill out the form below and our team will get back to you within 24-48 hours.</p>
-    
-    <form style="display: flex; flex-direction: column; gap: 20px;">
-      <div>
-        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Name *</label>
-        <input type="text" placeholder="John Doe" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-      </div>
-      <div>
-        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Email Address *</label>
-        <input type="email" placeholder="john@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-      </div>
-      <div>
-        <label style="display: block; font-weight: 600; margin-bottom: 8px;">I'm interested in *</label>
-        <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-          <option>General Inquiry</option>
+        <p style="font-size: 18px; color: #666; max-width: 600px; line-height: 1.6; margin: 0;">
+            Whether you're interested in joining our program, becoming a mentor, or partnering with us—we'd love to hear from you.
+        </p>
+
+    </section>
+
+    <section class="contact-container">
+
+        <div>
+            <h2 style="font-size: 32px; margin-bottom: 10px;">Send Us a Message</h2>
+            <p style="color: #666; margin-bottom: 30px;">Fill out the form below and our team will get back to you within 24-48 hours.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Name *</label>
+                    <input id="inq-name" type="text" placeholder="John Doe" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px;">Email Address *</label>
+                    <input id="inq-email" type="email" placeholder="john@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px;">I'm interested in *</label>
+                    <select id="inq-type" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Mentorship">Mentorship</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Sponsorship">Sponsorship</option>
+          <option value="Other">Other</option>
         </select>
-      </div>
-      <div>
-        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Subject *</label>
-        <input type="text" placeholder="Brief subject of your message" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-      </div>
-      <div>
-        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Message *</label>
-        <textarea placeholder="Tell us more about your inquiry..." style="width: 100%; height: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;"></textarea>
-      </div>
-      <button type="submit" style="background-color: #054684; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px;">Subject *</label>
+                    <input id="inq-subject" type="text" placeholder="Brief subject of your message" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px;">Message *</label>
+                    <textarea id="inq-message" placeholder="Tell us more about your inquiry..." style="width: 100%; height: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; resize: vertical;"></textarea>
+                </div>
+
+                <div id="inq-status" style="display: none; padding: 12px 16px; border-radius: 8px; font-size: 14px;"></div>
+
+                <button id="inq-btn" onclick="submitInquiry()" style="background-color: #054684; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 15px;">
         Send Message
       </button>
-    </form>
-  </div>
+            </div>
+        </div>
 
-  <div style="display: flex; flex-direction: column; gap: 30px;">
-    
-    <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px;">
-      <h3 style="font-size: 20px; margin-bottom: 20px;">Quick Links</h3>
-      <div style="display: flex; flex-direction: column; gap: 15px;">
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="menteeAppform.html" style="color: #054684; text-decoration: underline;">Apply as a Mentee</a></strong><br><small style="color: #666;">Join our accelerator program</small></div>
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="mentorAppform.html" style="color: #054684; text-decoration: underline;">Become a Mentor</a></strong><br><small style="color: #666;">Share your expertise</small></div>
-        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="#" style="color: #054684; text-decoration: underline;">Partner With Us</a></strong><br><small style="color: #666;">Collaborate on our mission</small></div>
-      </div>
-    </div>
+        <div style="display: flex; flex-direction: column; gap: 30px;">
 
-    <div style="background: linear-gradient(90deg, #054684, #f66530); color: white; padding: 30px; border-radius: 12px;">
-      <h3 style="margin-top: 0; color: white;">Why Reach Out?</h3>
-      <ul style="padding-left: 20px; line-height: 1.8;">
-        <li>Get answers to your questions about our programs</li>
-        <li>Explore mentorship and partnership opportunities</li>
-        <li>Connect with our team and community</li>
-        <li>Discuss collaboration and sponsorship options</li>
-      </ul>
-    </div>
-  </div>
+            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px;">
+                <h3 style="font-size: 20px; margin-bottom: 20px;">Quick Links</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="menteeAppform.html" style="color: #054684; text-decoration: underline;">Apply as a Mentee</a></strong><br><small style="color: #666;">Join our accelerator program</small></div>
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="mentorAppform.html" style="color: #054684; text-decoration: underline;">Become a Mentor</a></strong><br><small style="color: #666;">Share your expertise</small></div>
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer;"><strong><a href="partnershipform.html" style="color: #054684; text-decoration: underline;">Partner With Us</a></strong><br><small style="color: #666;">Collaborate on our mission</small></div>
+                </div>
+            </div>
 
-</section>
+            <div style="background: linear-gradient(90deg, #054684, #f66530); color: white; padding: 30px; border-radius: 12px;">
+                <h3 style="margin-top: 0; color: white;">Why Reach Out?</h3>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li>Get answers to your questions about our programs</li>
+                    <li>Explore mentorship and partnership opportunities</li>
+                    <li>Connect with our team and community</li>
+                    <li>Discuss collaboration and sponsorship options</li>
+                </ul>
+            </div>
+        </div>
 
-<section style="font-family: sans-serif; padding: 60px 20px; background-color: #fcfcfc; text-align: center;">
-  
-  <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Contact Information</h2>
-  <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Multiple ways to reach us</p>
+    </section>
+    <section style="font-family: sans-serif; padding: 60px 20px; background-color: #fcfcfc; text-align: center;">
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-    
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color:#054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📧</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Email Us</h3>
-      <p style="font-size: 16px; font-weight: bold; color:#054684; margin: 0 0 10px 0;">info@beyonddata.africa</p>
-      <p style="font-size: 14px; color: #666; margin: 0;">We respond within 24-48 hours</p>
-    </div>
+        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Contact Information</h2>
+        <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Multiple ways to reach us</p>
 
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📍</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Visit Us</h3>
-      <p style="font-size: 16px; font-weight: bold; color: #054684; margin: 0 0 10px 0;">Mombasa, Kenya</p>
-      <p style="font-size: 14px; color: #666; margin: 0;">East Africa Hub</p>
-    </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
 
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📞</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Call Us</h3>
-      <p style="font-size: 16px; font-weight: bold; color: #054684; margin: 0 0 10px 0;">+254 XXX XXX XXX</p>
-      <p style="font-size: 14px; color: #666; margin: 0;">Mon-Fri, 9am-5pm EAT</p>
-    </div>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color:#054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📧</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Email Us</h3>
+                <p style="font-size: 16px; font-weight: bold; color:#054684; margin: 0 0 10px 0;">info@beyonddata.africa</p>
+                <p style="font-size: 14px; color: #666; margin: 0;">We respond within 24-48 hours</p>
+            </div>
 
-  </div>
-</section>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📍</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Visit Us</h3>
+                <p style="font-size: 16px; font-weight: bold; color: #054684; margin: 0 0 10px 0;">Mombasa, Kenya</p>
+                <p style="font-size: 14px; color: #666; margin: 0;">East Africa Hub</p>
+            </div>
 
-<section style="font-family: sans-serif; padding: 60px 20px; background-color: #fcfcfc; text-align: center;">
-  
-  <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Partnership Opportunities</h2>
-  <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Join us in empowering Africa's digital future</p>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">📞</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Call Us</h3>
+                <p style="font-size: 16px; font-weight: bold; color: #054684; margin: 0 0 10px 0;">+254 XXX XXX XXX</p>
+                <p style="font-size: 14px; color: #666; margin: 0;">Mon-Fri, 9am-5pm EAT</p>
+            </div>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-    
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🏢</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Corporate Partners</h3>
-      <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Provide internships, jobs, and resources to our mentees</p>
-    </div>
+        </div>
+    </section>
 
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🎓</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Educational Institutions</h3>
-      <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Collaborate on curriculum and expand program reach</p>
-    </div>
+    <section style="font-family: sans-serif; padding: 60px 20px; background-color: #fcfcfc; text-align: center;">
 
-    <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
-      <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🤝</div>
-      <h3 style="font-size: 20px; margin: 0 0 10px 0;">Sponsors & Donors</h3>
-      <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Fund scholarships and program expansion across Africa</p>
-    </div>
+        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Partnership Opportunities</h2>
+        <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Join us in empowering Africa's digital future</p>
 
-  </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
 
-  <div style="margin-top: 50px; background: linear-gradient(90deg, #054684, #dd6b20); padding: 40px; border-radius: 12px; color: white; max-width: 1000px; margin-left: auto; margin-right: auto;">
-    <h3 style="font-size: 28px; margin: 0 0 15px 0; color: white;">Interested in Partnering?</h3>
-    <p style="font-size: 16px; margin: 0 0 25px 0; opacity: 0.9;">Let's discuss how we can work together to create impact across Africa's tech ecosystem.</p>
-    <a href="#" style="background-color: white; color: #054684; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block;">Contact Partnerships Team</a>
-  </div>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🏢</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Corporate Partners</h3>
+                <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Provide internships, jobs, and resources to our mentees</p>
+            </div>
 
-</section>
-        <!-- FOOTER -->
-    <footer style="background-color:#054684; color: white; padding: 50px 20px; font-family: sans-serif;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 40px;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-        <div class="logo-icon">
-    <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
-  </div>
-      </div>
-      <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
-      <div style="display: flex; gap: 10px; margin-top: 20px;">
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">in</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">𝕏</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">f</div>
-        <div style="width: 35px; height: 35px; background: #ffffff22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">ig</div>
-      </div>
-    </div>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🎓</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Educational Institutions</h3>
+                <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Collaborate on curriculum and expand program reach</p>
+            </div>
 
-    <div>
-      <h3 style="margin-top: 0;color: white;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
-        <li><a href="about.html" style="color: white; text-decoration: underline;">About Us</a></li>
-        <li><a href="programs.html" style="color: white; text-decoration: underline;">Programs</a></li>
-        <li><a href="mentorship.html" style="color: white; text-decoration: underline;">Mentorship</a></li>
-        <li><a href="opportunities.html" style="color: white; text-decoration: underline;">Opportunities</a></li>
-      </ul>
-    </div>
+            <div style="background-color: white; padding: 40px 20px; border-radius: 12px; border: 1px solid #e0e0e0;">
+                <div style="background-color: #eff6ff; color: #054684; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 24px;">🤝</div>
+                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Sponsors & Donors</h3>
+                <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Fund scholarships and program expansion across Africa</p>
+            </div>
 
-    <div>
-      <h3 style="margin-top: 0;color: white;">Contact</h3>
-      <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-      <p style="opacity: 0.8;">Mombasa, Kenya</p>
-      <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
-    </div>
-  </div>
+        </div>
 
-  <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
-    <h3 style="margin-top: 0;color: white;">Stay Updated</h3>
-    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-    <div style="display: flex; gap: 10px; max-width: 500px;">
-      <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #ffffff11; color: white;">
-      <button style="background: linear-gradient(to right, #f66530, #f66530); border: none; padding: 12px 25px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer;">Subscribe</button>
-    </div>
-  </div>
+        <div style="margin-top: 50px; background: linear-gradient(90deg, #054684, #dd6b20); padding: 40px; border-radius: 12px; color: white; max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <h3 style="font-size: 28px; margin: 0 0 15px 0; color: white;">Interested in Partnering?</h3>
+            <p style="font-size: 16px; margin: 0 0 25px 0; opacity: 0.9;">Let's discuss how we can work together to create impact across Africa's tech ecosystem.</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=intellab@beyonddataict.com&su=Partnership%20Inquiry" target="_blank" style="background-color: white; color: #054684; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block;">
+  Contact Partnerships Team
+</a>
+        </div>
 
-  <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-    &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
-  </div>
-</footer>
+    </section>
+    <!-- FOOTER -->
+    <footer style="background-color: #054684; color: white; padding: 50px 20px; font-family: sans-serif;">
+        <div class="footer-grid">
+            <div style="flex: 1; min-width: 260px; max-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <div class="logo-icon">
+                        <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
+                    </div>
+                </div>
+                <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+                <div class="social-icons">
+                    <div class="social-icon">in</div>
+                    <div class="social-icon">𝕏</div>
+                    <div class="social-icon">f</div>
+                    <div class="social-icon">ig</div>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+                    <li><a href="about.html" style="color: white; text-decoration: underline;">About Us</a></li>
+                    <li><a href="programs.html" style="color: white; text-decoration: underline;">Programs</a></li>
+                    <li><a href="mentorship.html" style="color: white; text-decoration: underline;">Mentorship</a></li>
+                    <li><a href="opportunities.html" style="color: white; text-decoration: underline;">Opportunities</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-top: 0; color: white;">Contact</h3>
+                <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+                <p style="opacity: 0.8;">Mombasa, Kenya</p>
+                <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+            </div>
+        </div>
 
+        <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+            <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
+            <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+            <div class="newsletter-row">
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+            <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
+            &copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
+        </div>
+    </footer>
+    <script src="script.js"></script>
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -274,6 +282,87 @@
             alert("Your query record has been simulated successfully! We will connect with you soon.");
             event.target.reset();
         }
+
+        async function submitInquiry() {
+            const name = document.getElementById('inq-name').value.trim();
+            const email = document.getElementById('inq-email').value.trim();
+            const inquiryType = document.getElementById('inq-type').value;
+            const subject = document.getElementById('inq-subject').value.trim();
+            const message = document.getElementById('inq-message').value.trim();
+            const btn = document.getElementById('inq-btn');
+            const status = document.getElementById('inq-status');
+
+            // Reset status
+            status.style.display = 'none';
+
+            // Validate
+            if (!name || !email || !inquiryType || !subject || !message) {
+                status.style.display = 'block';
+                status.style.background = '#fff5f5';
+                status.style.border = '1px solid #fca5a5';
+                status.style.color = '#c53030';
+                status.textContent = 'Please fill in all required fields.';
+                return;
+            }
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(email)) {
+                status.style.display = 'block';
+                status.style.background = '#fff5f5';
+                status.style.border = '1px solid #fca5a5';
+                status.style.color = '#c53030';
+                status.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch('https://intellab-backend.onrender.com/api/inquiries', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        inquiryType,
+                        subject,
+                        message
+                    })
+                });
+
+                if (res.ok) {
+                    status.style.display = 'block';
+                    status.style.background = '#edf7f2';
+                    status.style.border = '1px solid #9fd4b8';
+                    status.style.color = '#1a6641';
+                    status.textContent = '✓ Message sent! We\'ll get back to you within 24–48 hours.';
+                    // Clear fields
+                    ['inq-name', 'inq-email', 'inq-subject', 'inq-message'].forEach(id => document.getElementById(id).value = '');
+                    document.getElementById('inq-type').selectedIndex = 0;
+                    btn.textContent = 'Message Sent';
+                } else {
+                    const data = await res.json().catch(() => ({}));
+                    status.style.display = 'block';
+                    status.style.background = '#fff5f5';
+                    status.style.border = '1px solid #fca5a5';
+                    status.style.color = '#c53030';
+                    status.textContent = data.message || `Submission failed (${res.status}). Please try again.`;
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                }
+            } catch (err) {
+                status.style.display = 'block';
+                status.style.background = '#fff5f5';
+                status.style.border = '1px solid #fca5a5';
+                status.style.color = '#c53030';
+                status.textContent = 'Network error — please check your connection and try again.';
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+            }
+        }
     </script>
 </body>
+
 </html>

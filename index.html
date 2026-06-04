@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,61 @@
     <link rel="stylesheet" href="styles.css" class="css">
     <style>
         /* ===== RESET & BASE ===== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: sans-serif; color: #0F172A; }
-        a { text-decoration: none; }
-        img { max-width: 100%; }
-
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: sans-serif;
+            color: #0F172A;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        img {
+            max-width: 100%;
+        }
         /* ===== CONTAINER ===== */
+        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* ===== GRID UTILITIES ===== */
+        
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
         }
+        
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
+        
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-
         /* ===== SECTION PADDING ===== */
-        .section-padding { padding: 80px 0; }
-
+        
+        .section-padding {
+            padding: 80px 0;
+        }
         /* ===== NAVBAR ===== */
+        
         .navbar {
             position: sticky;
             top: 0;
@@ -49,6 +71,7 @@
             border-bottom: 1px solid #E2E8F0;
             padding: 16px 0;
         }
+        
         .nav-container {
             display: flex;
             align-items: center;
@@ -62,13 +85,19 @@
             gap: 24px;
             align-items: center;
         }
+        
         .nav-links a {
             color: #475569;
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
         }
-        .nav-links a:hover, .nav-links a.active { color: #FF7A18; }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FF7A18;
+        }
+        
         .btn-nav-apply {
             background: #FF7A18;
             color: #fff;
@@ -79,8 +108,8 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
-
         /* Hamburger */
+        
         .hamburger {
             display: none;
             flex-direction: column;
@@ -90,6 +119,7 @@
             border: none;
             padding: 4px;
         }
+        
         .hamburger span {
             display: block;
             width: 24px;
@@ -98,6 +128,7 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
+        
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -106,7 +137,11 @@
             border-top: 1px solid #E2E8F0;
             padding: 16px 20px;
         }
-        .mobile-menu.open { display: flex; }
+        
+        .mobile-menu.open {
+            display: flex;
+        }
+        
         .mobile-menu a {
             color: #475569;
             font-size: 0.95rem;
@@ -114,6 +149,7 @@
             padding: 12px 0;
             border-bottom: 1px solid #F1F5F9;
         }
+        
         .mobile-menu .mobile-apply {
             background: #FF7A18;
             color: #fff;
@@ -124,8 +160,8 @@
             margin-top: 12px;
             border-bottom: none;
         }
-
         /* ===== HERO BADGE ===== */
+        
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -139,20 +175,52 @@
             font-weight: 500;
             margin-bottom: 20px;
         }
-
         /* ===== BUTTONS ===== */
-        .btn { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s; }
-        .btn:hover { opacity: 0.88; }
-        .btn-pill-gradient { background: linear-gradient(90deg,#FF7A18 0%, #FF9A4A 100%); color: #fff; border-radius: 50px; padding: 14px 28px; }
-        .btn-pill-white { background: #fff; color: #FF7A18; border-radius: 50px; padding: 14px 28px; border: 1px solid #FFE6D9; }
-        .btn-pill-outline { background: transparent; color: #FF7A18; border-radius: 50px; padding: 14px 28px; border: 1px solid #FFD1B3; }
-
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .btn:hover {
+            opacity: 0.88;
+        }
+        
+        .btn-pill-gradient {
+            background: linear-gradient(90deg, #FF7A18 0%, #FF9A4A 100%);
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 28px;
+        }
+        
+        .btn-pill-white {
+            background: #fff;
+            color: #FF7A18;
+            border-radius: 50px;
+            padding: 14px 28px;
+            border: 1px solid #FFE6D9;
+        }
+        
+        .btn-pill-outline {
+            background: transparent;
+            color: #FF7A18;
+            border-radius: 50px;
+            padding: 14px 28px;
+            border: 1px solid #FFD1B3;
+        }
         /* ===== STAT CARDS ===== */
+        
         .stat-container-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
+        
         .stat-metric-card {
             background: #fff;
             padding: 24px;
@@ -160,18 +228,40 @@
             border: 1px solid #E2E8F0;
             text-align: center;
         }
-        .stat-number { font-size: 1.75rem; font-weight: 800; color: #0062FF; }
-        .stat-label { font-size: 0.85rem; color: #64748B; margin-top: 4px; }
-
+        
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #0062FF;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #64748B;
+            margin-top: 4px;
+        }
         /* ===== PILLAR CARDS ===== */
+        
         .pillar-card {
             background: #fff;
             padding: 32px;
             border-radius: 16px;
             border: 1px solid #E2E8F0;
         }
-        .pillar-card h3 { font-size: 1.1rem; font-weight: 700; margin: 16px 0 10px; color: #0F172A; }
-        .pillar-card p { color: #64748B; font-size: 0.9rem; line-height: 1.5; }
+        
+        .pillar-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 16px 0 10px;
+            color: #0F172A;
+        }
+        
+        .pillar-card p {
+            color: #64748B;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
         .pillar-icon-box {
             width: 44px;
             height: 44px;
@@ -182,10 +272,18 @@
             font-size: 1.2rem;
             color: #fff;
         }
-
         /* ===== FAQ ===== */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #E2E8F0; padding: 20px 0; }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 20px 0;
+        }
+        
         .faq-question {
             width: 100%;
             display: flex;
@@ -200,9 +298,16 @@
             text-align: left;
             gap: 12px;
         }
-        .faq-answer { display: none; padding-top: 15px; color: #475569; line-height: 1.6; font-size: 0.95rem; }
-
+        
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
         /* ===== HOW IT WORKS ===== */
+        
         .steps-row {
             display: flex;
             justify-content: space-between;
@@ -210,7 +315,14 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-        .step-item { flex: 1; min-width: 160px; padding: 20px; text-align: center; }
+        
+        .step-item {
+            flex: 1;
+            min-width: 160px;
+            padding: 20px;
+            text-align: center;
+        }
+        
         .step-divider {
             align-self: center;
             height: 2px;
@@ -219,13 +331,14 @@
             margin-bottom: 40px;
             flex-shrink: 0;
         }
-
         /* ===== FOOTER NEWSLETTER ===== */
+        
         .newsletter-row {
             display: flex;
             gap: 10px;
             max-width: 500px;
         }
+        
         .newsletter-row input {
             flex: 1;
             padding: 12px;
@@ -235,6 +348,7 @@
             color: white;
             min-width: 0;
         }
+        
         .newsletter-row button {
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             border: none;
@@ -245,8 +359,8 @@
             cursor: pointer;
             white-space: nowrap;
         }
-
         /* ===== FOOTER GRID ===== */
+        
         .footer-grid {
             display: flex;
             flex-wrap: wrap;
@@ -255,14 +369,15 @@
             margin: 0 auto;
             gap: 40px;
         }
-
         /* ===== CTA BUTTONS ROW ===== */
+        
         .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
+        
         .cta-buttons a {
             padding: 15px 30px;
             text-decoration: none;
@@ -270,8 +385,8 @@
             font-weight: bold;
             white-space: nowrap;
         }
-
         /* ===== HERO BUTTONS ===== */
+        
         .hero-buttons {
             display: flex;
             gap: 16px;
@@ -280,44 +395,50 @@
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
-
         /* ===== OPPORTUNITY GRID ===== */
+        
         .opportunity-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-bottom: 40px;
         }
+        
         .opportunity-card {
             padding: 40px;
             border: 1px solid #E2E8F0;
             border-radius: 16px;
             text-align: center;
         }
-
         /* ===== TESTIMONIAL GRID ===== */
+        
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
-
         /* ===== IMPACT GRID ===== */
+        
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
         }
-
         /* ===== WEEK GRID ===== */
+        
         .week-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 24px;
         }
-
         /* ===== SOCIAL ICONS ===== */
-        .social-icons { display: flex; gap: 10px; margin-top: 20px; }
+        
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
         .social-icon {
             width: 35px;
             height: 35px;
@@ -330,85 +451,162 @@
             color: #fff;
             flex-shrink: 0;
         }
-
         /* ===== RESPONSIVE BREAKPOINTS ===== */
-
         /* Tablet: 768px - 1024px */
+        
         @media (max-width: 1024px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
-            .stat-container-grid { grid-template-columns: repeat(2, 1fr); }
-            .grid-3 { grid-template-columns: repeat(2, 1fr); }
-            .nav-links { gap: 16px; }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-container-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                gap: 16px;
+            }
         }
-
         /* Mobile: up to 768px */
+        
         @media (max-width: 768px) {
             /* Nav */
-            .nav-links { display: none; }
-            .btn-nav-apply { display: none; }
-            .hamburger { display: flex; }
-
+            .nav-links {
+                display: none;
+            }
+            .btn-nav-apply {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
             /* Grids */
-            .grid-2 { grid-template-columns: 1fr; gap: 32px; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .grid-4 { grid-template-columns: 1fr 1fr; }
-            .stat-container-grid { grid-template-columns: 1fr 1fr; }
-
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-container-grid {
+                grid-template-columns: 1fr 1fr;
+            }
             /* Section padding */
-            .section-padding { padding: 48px 0; }
-
+            .section-padding {
+                padding: 48px 0;
+            }
             /* Hero */
-            header { padding: 48px 0 40px !important; }
-            header h1 { font-size: 2.2rem !important; }
-            header p { font-size: 1rem !important; }
-
+            header {
+                padding: 48px 0 40px !important;
+            }
+            header h1 {
+                font-size: 2.2rem !important;
+            }
+            header p {
+                font-size: 1rem !important;
+            }
             /* Steps */
-            .steps-row { flex-direction: column; align-items: center; }
-            .step-divider { display: none; }
-            .step-item { width: 100%; max-width: 340px; }
-
+            .steps-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step-divider {
+                display: none;
+            }
+            .step-item {
+                width: 100%;
+                max-width: 340px;
+            }
             /* Newsletter */
-            .newsletter-row { flex-direction: column; max-width: 100%; }
-            .newsletter-row input, .newsletter-row button { width: 100%; }
-
+            .newsletter-row {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            .newsletter-row input,
+            .newsletter-row button {
+                width: 100%;
+            }
             /* Section headings */
-            h2[style*="2.75rem"] { font-size: 2rem !important; }
-            h1[style*="3.5rem"] { font-size: 2.2rem !important; }
-            h1[style*="3rem"] { font-size: 2rem !important; }
-
+            h2[style*="2.75rem"] {
+                font-size: 2rem !important;
+            }
+            h1[style*="3.5rem"] {
+                font-size: 2.2rem !important;
+            }
+            h1[style*="3rem"] {
+                font-size: 2rem !important;
+            }
             /* CTA buttons */
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .cta-buttons a { width: 100%; max-width: 300px; text-align: center; }
-
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-buttons a {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
             /* Hero buttons */
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .hero-buttons a { width: 100%; max-width: 280px; text-align: center; }
-
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-buttons a {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
             /* Cohort stats */
-            .cohort-grid { grid-template-columns: 1fr 1fr !important; }
-
+            .cohort-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
             /* Who we are icon grid */
-            .who-grid { grid-template-columns: 1fr 1fr !important; }
-
+            .who-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
             /* Footer */
-            .footer-grid { flex-direction: column; }
-
+            .footer-grid {
+                flex-direction: column;
+            }
             /* Who we serve grid */
-            .serve-grid { grid-template-columns: 1fr !important; }
+            .serve-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
-
+        
         @media (max-width: 480px) {
-            .grid-4 { grid-template-columns: 1fr; }
-            .stat-container-grid { grid-template-columns: 1fr 1fr; }
-            .cohort-grid { grid-template-columns: 1fr 1fr !important; }
-            .who-grid { grid-template-columns: 1fr 1fr !important; }
-            header h1 { font-size: 1.85rem !important; }
-            h2[style*="2.75rem"] { font-size: 1.75rem !important; }
-            .pillar-card { padding: 24px; }
-            .opportunity-grid { grid-template-columns: 1fr; }
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .stat-container-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .cohort-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .who-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            header h1 {
+                font-size: 1.85rem !important;
+            }
+            h2[style*="2.75rem"] {
+                font-size: 1.75rem !important;
+            }
+            .pillar-card {
+                padding: 24px;
+            }
+            .opportunity-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -416,9 +614,9 @@
         <div class="container nav-container">
             <a href="#" class="logo-block">
                 <div class="logo-icon">
-    <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
-  </div>
-                
+                    <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
+                </div>
+
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -459,14 +657,14 @@
             <div class="hero-buttons">
                 <a href="menteeAppform.html" class="btn btn-pill-gradient" style="background: #f66530; color: #FFFFFF;">Apply as a Mentee</a>
                 <a href="mentorAppform.html" class="btn btn-pill-white" style="color: #f66530;">Become a Mentor</a>
-                <a href="about.html#partnership" class="btn btn-pill-outline" style="color: #f66530;">Partner With Us</a>
+                <a href="partnershipform.html" class="btn btn-pill-outline" style="color: #f66530;">Partner With Us</a>
             </div>
             <p style="font-size: 0.95rem; color: #64748B; max-width: 600px; margin: 0 auto 60px auto;">
                 We are building a generation of digitally empowered youth ready to solve real African challenges using data, AI, technology, entrepreneurship, innovation, and digital collaboration.
             </p>
             <div class="stat-container-grid">
-                        <div class="stat-metric-card" >
-                            <div class="stat-number" style="color:#054684">10,000+</div>
+                <div class="stat-metric-card">
+                    <div class="stat-number" style="color:#054684">10,000+</div>
                     <div class="stat-label">Youth Empowered</div>
                 </div>
                 <div class="stat-metric-card">
@@ -963,7 +1161,7 @@
             <div class="cta-buttons">
                 <a href="menteeAppform.html" style="background:  #f66530; color: #054684;">Join as a Mentee</a>
                 <a href="mentorAppform.html" style="background: transparent; border: 2px solid rgba(255, 255, 255, 0.5); color: white;">Become a Mentor</a>
-                <a href="#" style="background: transparent; border: 2px solid rgba(255, 255, 255, 0.5); color: white;">Partner With Us</a>
+                <a href="partnershipform.html" style="background: transparent; border: 2px solid rgba(255, 255, 255, 0.5); color: white;">Partner With Us</a>
             </div>
         </div>
     </section>
@@ -973,9 +1171,9 @@
         <div class="footer-grid">
             <div style="flex: 1; min-width: 260px; max-width: 320px;">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                     <div class="logo-icon">
-    <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
-  </div>
+                    <div class="logo-icon">
+                        <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
+                    </div>
                 </div>
                 <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
                 <div class="social-icons">
@@ -1006,16 +1204,17 @@
             <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
             <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
             <div class="newsletter-row">
-                <input type="email" placeholder="Enter your email">
-                <button style="background: #f66530">Subscribe</button>
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
             </div>
+            <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
         </div>
 
         <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-            &copy; 2026 BeyondData Intellab. All rights reserved. Building Africa's Digital Future.
+            &copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
         </div>
     </footer>
-
+    <script src="script.js"></script>
     <script>
         // Hamburger menu
         const hamburger = document.getElementById('hamburger');
@@ -1036,4 +1235,5 @@
         });
     </script>
 </body>
+
 </html>
