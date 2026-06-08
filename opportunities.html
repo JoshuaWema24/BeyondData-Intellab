@@ -32,6 +32,34 @@
         color: #fff;
         flex-shrink: 0;
     }
+    /* ===== NEWSLETTER ===== */
+    
+    .newsletter-row {
+        display: flex;
+        gap: 10px;
+        max-width: 500px;
+    }
+    
+    .newsletter-row input {
+        flex: 1;
+        padding: 12px;
+        border-radius: 6px;
+        border: none;
+        background: #ffffff11;
+        color: white;
+        min-width: 0;
+    }
+    
+    .newsletter-row button {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 6px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        white-space: nowrap;
+    }
 </style>
 
 <body>
@@ -220,17 +248,18 @@
                 </div>
                 <div>
                     <h3 style="margin-top: 0; color: white;">Contact</h3>
-                    <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-                    <p style="opacity: 0.8;">Mombasa, Kenya </p><button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button></div>
-            </div>
-            <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
-                <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
-                <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-                <div class="newsletter-row"><input type="email" id="newsletter-email" placeholder="Enter your email"><button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button></div>
-                <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
-            </div>
-            <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
-            </div>
+                    <p style="opacity: 0.8;">✉ info@beyonddataict.com</p>
+                    <p style="opacity: 0.8;">Mombasa, Kenya</p>
+                    <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+                </div>
+                <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+                    <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
+                    <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+                    <div class="newsletter-row"><input type="email" id="newsletter-email" placeholder="Enter your email"><button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button></div>
+                    <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
+                </div>
+                <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
+                </div>
         </footer>
         <script src="script.js"></script>
         <script>
