@@ -11,308 +11,242 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    /* ===== SOCIAL ICONS ===== */
+    
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        background: #ffffff22;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: #fff;
+        flex-shrink: 0;
+    }
+</style>
 
 <body>
 
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <nav class="navbar">
-        <div class="container nav-container">
-
-            <div class="logo-icon">
-                <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
+    <body>
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo-icon"><img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo"></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="mentorship.html">Mentorship</a></li>
+                    <li><a href="opportunities.html" class="active">Opportunities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions"><a href="application.html" class="btn-nav-apply">Apply Now</a></div><button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button></div>
+        </nav>
+        <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; font-family: sans-serif; background-color: #fcfcfc;">
+            <div style="display: inline-flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 20px; padding: 6px 15px; margin-bottom: 20px; font-size: 14px; color: #555; background-color: #fff;"><span style="margin-right: 8px;">💼</span><span>Opportunities</span></div>
+            <h1 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">Your Gateway to <span style="color: #054684;">Career Success</span></h1>
+            <p style="font-size: 18px; color: #666; max-width: 600px; line-height: 1.6; margin: 0;">Access internships, jobs, projects, and networking opportunities through our extensive partner network across Africa and beyond. </p>
+        </section>
+        <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Opportunity Types</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Diverse pathways to launch and grow your digital career</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💼</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">300+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Internships</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Gain hands-on experience with leading tech companies and startups</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">❤️</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">150+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Volunteering</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Contribute to meaningful projects and build your portfolio</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">👥</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">50+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Networking Events</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Connect with industry leaders, peers, and potential employers</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #ff5533; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💡</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">100+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Startup Collaborations</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Work directly with innovative startups solving African challenges</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🎗️</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">25+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Innovation Challenges</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Compete in hackathons and pitch competitions with prizes</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
+                    <div style="background-color: #223355; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🎯</div>
+                    <h3 style="font-size: 24px; color: #054684; margin: 0;">200+</h3>
+                    <p style="font-weight: bold; margin: 5px 0;">Project Experience</p>
+                    <p style="font-size: 14px; color: #666; line-height: 1.5;">Real client projects to build your skills and portfolio</p>
+                </div>
             </div>
-
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="mentorship.html">Mentorship</a></li>
-                <li><a href="opportunities.html" class="active">Opportunities</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <a href="application.html" class="btn-nav-apply">Apply Now</a>
+        </section>
+        <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Internship Programs</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Gain real-world experience with top organizations</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; text-align: left;">
+                <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🌐</div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px 0;">Tech Giants</h3>
+                    <p style="font-size: 16px; color: #666; margin: 0;">Internships with Google, Microsoft, Meta, and other global leaders</p>
+                </div>
+                <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">↗️</div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px 0;">African Unicorns</h3>
+                    <p style="font-size: 16px; color: #666; margin: 0;">Opportunities with Flutterwave, Andela, Jumia, and other African success stories</p>
+                </div>
+                <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💡</div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px 0;">Fast-Growing Startups</h3>
+                    <p style="font-size: 16px; color: #666; margin: 0;">Early-stage roles where you can make a real impact</p>
+                </div>
+                <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
+                    <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">❤️</div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px 0;">Social Impact Orgs</h3>
+                    <p style="font-size: 16px; color: #666; margin: 0;">NGOs and social enterprises driving change across Africa</p>
+                </div>
             </div>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; font-family: sans-serif; background-color: #fcfcfc;">
-
-        <div style="display: inline-flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 20px; padding: 6px 15px; margin-bottom: 20px; font-size: 14px; color: #555; background-color: #fff;">
-            <span style="margin-right: 8px;">💼</span>
-            <span>Opportunities</span>
-        </div>
-
-        <h1 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">
-            Your Gateway to <span style="color: #054684;">Career Success</span>
-        </h1>
-
-        <p style="font-size: 18px; color: #666; max-width: 600px; line-height: 1.6; margin: 0;">
-            Access internships, jobs, projects, and networking opportunities through our extensive partner network across Africa and beyond.
-        </p>
-
-    </section>
-
-    <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
-
-        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Opportunity Types</h2>
-        <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Diverse pathways to launch and grow your digital career</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💼</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">300+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Internships</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Gain hands-on experience with leading tech companies and startups</p>
+        </section>
+        <section style="font-family: sans-serif; padding: 60px 20px; background-color: #054684; color: #ffffff; text-align: center;">
+            <h2 style="font-size: 36px; margin: 0 0 15px 0; color: #ffffff;">Networking & Community Events</h2>
+            <p style="font-size: 18px; color: #b0c4de; margin-bottom: 50px;">Build relationships that accelerate your career</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+                <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
+                    <div style="font-size: 30px; margin-bottom: 20px;">👥</div>
+                    <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Industry Meetups</h3>
+                    <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Monthly gatherings with professionals from various tech sectors</p>
+                </div>
+                <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
+                    <div style="font-size: 30px; margin-bottom: 20px;">💼</div>
+                    <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Career Fairs</h3>
+                    <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Direct access to hiring managers from top companies</p>
+                </div>
+                <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
+                    <div style="font-size: 30px; margin-bottom: 20px;">🎗️</div>
+                    <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Speaker Series</h3>
+                    <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Learn from successful entrepreneurs and tech leaders</p>
+                </div>
             </div>
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">❤️</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">150+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Volunteering</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Contribute to meaningful projects and build your portfolio</p>
+        </section>
+        <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Innovation Challenges</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Compete, win, and get noticed by industry leaders</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+                <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
+                    <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Quarterly Hackathons</h3>
+                    <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">$5, 000 in prizes</p>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Solve real problems and win cash prizes and startup support</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
+                    <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Pitch Competitions</h3>
+                    <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">$10, 000 seed funding</p>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Present your startup idea to investors and win funding</p>
+                </div>
+                <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
+                    <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Innovation Showcases</h3>
+                    <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">Partner opportunities</p>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Demonstrate your projects to potential clients and employers</p>
+                </div>
             </div>
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">👥</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">50+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Networking Events</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Connect with industry leaders, peers, and potential employers</p>
+        </section>
+        <section style="font-family: sans-serif; padding: 40px 20px; background-color: #ffffff; text-align: center;">
+            <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">How to Access Opportunities</h2>
+            <p style="font-size: 18px; color: #555; margin-bottom: 50px;">Three simple ways to connect with opportunities</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1000px; margin: 0 auto;">
+                <div style="flex: 1; min-width: 250px; text-align: center;">
+                    <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">1</div>
+                    <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Complete the Program</h3>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Successfully finish the 8-week accelerator to unlock opportunities</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; text-align: center;">
+                    <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">2</div>
+                    <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Build Your Profile</h3>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Showcase your projects, skills, and achievements on our platform</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; text-align: center;">
+                    <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">3</div>
+                    <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Get Matched</h3>
+                    <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Receive personalized opportunity recommendations based on your goals</p>
+                </div>
             </div>
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #ff5533; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💡</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">100+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Startup Collaborations</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Work directly with innovative startups solving African challenges</p>
-            </div>
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🎗️</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">25+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Innovation Challenges</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Compete in hackathons and pitch competitions with prizes</p>
-            </div>
-
-            <div style="background-color: #f4f7ff; padding: 30px; border-radius: 12px; text-align: left;">
-                <div style="background-color: #223355; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🎯</div>
-                <h3 style="font-size: 24px; color: #054684; margin: 0;">200+</h3>
-                <p style="font-weight: bold; margin: 5px 0;">Project Experience</p>
-                <p style="font-size: 14px; color: #666; line-height: 1.5;">Real client projects to build your skills and portfolio</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
-
-        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Internship Programs</h2>
-        <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Gain real-world experience with top organizations</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; text-align: left;">
-
-            <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">🌐</div>
-                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Tech Giants</h3>
-                <p style="font-size: 16px; color: #666; margin: 0;">Internships with Google, Microsoft, Meta, and other global leaders</p>
-            </div>
-
-            <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">↗️</div>
-                <h3 style="font-size: 20px; margin: 0 0 10px 0;">African Unicorns</h3>
-                <p style="font-size: 16px; color: #666; margin: 0;">Opportunities with Flutterwave, Andela, Jumia, and other African success stories</p>
-            </div>
-
-            <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">💡</div>
-                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Fast-Growing Startups</h3>
-                <p style="font-size: 16px; color: #666; margin: 0;">Early-stage roles where you can make a real impact</p>
-            </div>
-
-            <div style="border: 1px solid #e0e0e0; padding: 30px; border-radius: 12px; background: white;">
-                <div style="background-color: #054684; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">❤️</div>
-                <h3 style="font-size: 20px; margin: 0 0 10px 0;">Social Impact Orgs</h3>
-                <p style="font-size: 16px; color: #666; margin: 0;">NGOs and social enterprises driving change across Africa</p>
-            </div>
-
-        </div>
-    </section>
-    <section style="font-family: sans-serif; padding: 60px 20px; background-color: #054684; color: #ffffff; text-align: center;">
-
-        <h2 style="font-size: 36px; margin: 0 0 15px 0; color: #ffffff;">Networking & Community Events</h2>
-        <p style="font-size: 18px; color: #b0c4de; margin-bottom: 50px;">Build relationships that accelerate your career</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-
-            <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
-                <div style="font-size: 30px; margin-bottom: 20px;">👥</div>
-                <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Industry Meetups</h3>
-                <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Monthly gatherings with professionals from various tech sectors</p>
-            </div>
-
-            <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
-                <div style="font-size: 30px; margin-bottom: 20px;">💼</div>
-                <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Career Fairs</h3>
-                <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Direct access to hiring managers from top companies</p>
-            </div>
-
-            <div style="background-color: #172a45; padding: 40px; border-radius: 12px; border: 1px solid #233554;">
-                <div style="font-size: 30px; margin-bottom: 20px;">🎗️</div>
-                <h3 style="font-size: 20px; margin: 0 0 15px 0; color: #ffffff;">Speaker Series</h3>
-                <p style="font-size: 16px; color: #a8b2d1; line-height: 1.5; margin: 0;">Learn from successful entrepreneurs and tech leaders</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section style="font-family: sans-serif; padding: 40px 20px; background-color: #fff; text-align: center;">
-
-        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">Innovation Challenges</h2>
-        <p style="font-size: 18px; color: #555; margin-bottom: 40px;">Compete, win, and get noticed by industry leaders</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
-
-            <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
-                <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
-                <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Quarterly Hackathons</h3>
-                <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">$5,000 in prizes</p>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Solve real problems and win cash prizes and startup support</p>
-            </div>
-
-            <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
-                <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
-                <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Pitch Competitions</h3>
-                <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">$10,000 seed funding</p>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Present your startup idea to investors and win funding</p>
-            </div>
-
-            <div style="background-color: #f4f7ff; padding: 40px 30px; border-radius: 16px; text-align: center;">
-                <div style="font-size: 40px; margin-bottom: 20px; color: #054684;">🎗️</div>
-                <h3 style="font-size: 22px; color: #1a1a1a; margin: 0 0 10px 0;">Innovation Showcases</h3>
-                <p style="font-size: 20px; font-weight: bold; color: #054684; margin: 0 0 15px 0;">Partner opportunities</p>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Demonstrate your projects to potential clients and employers</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section style="font-family: sans-serif; padding: 40px 20px; background-color: #ffffff; text-align: center;">
-
-        <h2 style="font-size: 36px; color: #1a1a1a; margin: 0 0 10px 0;">How to Access Opportunities</h2>
-        <p style="font-size: 18px; color: #555; margin-bottom: 50px;">Three simple ways to connect with opportunities</p>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1000px; margin: 0 auto;">
-
-            <div style="flex: 1; min-width: 250px; text-align: center;">
-                <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">1</div>
-                <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Complete the Program</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Successfully finish the 8-week accelerator to unlock opportunities</p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px; text-align: center;">
-                <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">2</div>
-                <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Build Your Profile</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Showcase your projects, skills, and achievements on our platform</p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px; text-align: center;">
-                <div style="background-color: #054684; color: white; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px auto;">3</div>
-                <h3 style="font-size: 20px; color: #1a1a1a; margin: 0 0 10px 0;">Get Matched</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.5; margin: 0;">Receive personalized opportunity recommendations based on your goals</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section style="font-family: sans-serif; padding: 80px 20px; background: linear-gradient(90deg, #054684, #f66530); text-align: center; color: white;">
-
-        <div style="font-size: 48px; margin-bottom: 20px;">💼</div>
-
-        <h2 style="font-size: 40px; margin: 0 0 20px 0;color: white;">Start Your Journey to Success</h2>
-
-        <p style="font-size: 18px; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.5;">
-            Join our program to unlock access to 1,000+ opportunities across Africa and beyond. Your dream career starts here.
-        </p>
-
-        <a href="application.html" style="display: inline-block; background-color: white; color: #2b6cb0; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 16px;">
-    Apply to the Program
-  </a>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer style="background-color: #054684; color: white; padding: 50px 20px; font-family: sans-serif;">
-        <div class="footer-grid">
-            <div style="flex: 1; min-width: 260px; max-width: 320px;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                    <div class="logo-icon">
-                        <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
+        </section>
+        <section style="font-family: sans-serif; padding: 80px 20px; background: linear-gradient(90deg, #054684, #f66530); text-align: center; color: white;">
+            <div style="font-size: 48px; margin-bottom: 20px;">💼</div>
+            <h2 style="font-size: 40px; margin: 0 0 20px 0;color: white;">Start Your Journey to Success</h2>
+            <p style="font-size: 18px; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.5;">Join our program to unlock access to 1, 000+opportunities across Africa and beyond. Your dream career starts here. </p><a href="application.html" style="display: inline-block; background-color: white; color: #2b6cb0; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 16px;">Apply to the Program </a></section>
+        <!-- FOOTER -->
+        <footer style="background-color: #054684; color: white; padding: 50px 20px; font-family: sans-serif;">
+            <div class="footer-grid">
+                <div style="flex: 1; min-width: 260px; max-width: 320px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <div class="logo-icon"><img src="25-Photoroom.png" alt="BeyondData Intellab Logo"></div>
+                    </div>
+                    <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
+                    <div class="social-icons">
+                        <div class="social-icon">in</div>
+                        <div class="social-icon">𝕏</div>
+                        <div class="social-icon">f</div>
+                        <div class="social-icon">ig</div>
                     </div>
                 </div>
-                <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
-                <div class="social-icons">
-                    <div class="social-icon">in</div>
-                    <div class="social-icon">𝕏</div>
-                    <div class="social-icon">f</div>
-                    <div class="social-icon">ig</div>
+                <div>
+                    <h3 style="margin-top: 0; color: white;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
+                        <li><a href="about.html" style="color: white; text-decoration: underline;">About Us</a></li>
+                        <li><a href="programs.html" style="color: white; text-decoration: underline;">Programs</a></li>
+                        <li><a href="mentorship.html" style="color: white; text-decoration: underline;">Mentorship</a></li>
+                        <li><a href="opportunities.html" style="color: white; text-decoration: underline;">Opportunities</a></li>
+                    </ul>
                 </div>
+                <div>
+                    <h3 style="margin-top: 0; color: white;">Contact</h3>
+                    <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
+                    <p style="opacity: 0.8;">Mombasa, Kenya </p><button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button></div>
             </div>
-            <div>
-                <h3 style="margin-top: 0; color: white;">Quick Links</h3>
-                <ul style="list-style: none; padding: 0; opacity: 0.8; line-height: 2;">
-                    <li><a href="about.html" style="color: white; text-decoration: underline;">About Us</a></li>
-                    <li><a href="programs.html" style="color: white; text-decoration: underline;">Programs</a></li>
-                    <li><a href="mentorship.html" style="color: white; text-decoration: underline;">Mentorship</a></li>
-                    <li><a href="opportunities.html" style="color: white; text-decoration: underline;">Opportunities</a></li>
-                </ul>
+            <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
+                <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
+                <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
+                <div class="newsletter-row"><input type="email" id="newsletter-email" placeholder="Enter your email"><button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button></div>
+                <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
             </div>
-            <div>
-                <h3 style="margin-top: 0; color: white;">Contact</h3>
-                <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-                <p style="opacity: 0.8;">Mombasa, Kenya</p>
-                <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
+            <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
             </div>
-        </div>
+        </footer>
+        <script src="script.js"></script>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const menuOverlay = document.getElementById('menuOverlay');
 
-        <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
-            <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
-            <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-            <div class="newsletter-row">
-                <input type="email" id="newsletter-email" placeholder="Enter your email">
-                <button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
-            </div>
-            <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
-        </div>
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            }
 
-        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-            &copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
-        </div>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function toggleMenu() {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-    </script>
-</body>
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+        </script>
+    </body>
 
 </html>

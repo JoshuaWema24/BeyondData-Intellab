@@ -11,7 +11,7 @@ async function subscribeNewsletter() {
     }
 
     btn.disabled = true;
-    btn.textContent = 'Subscribing...';
+    btn.textContent = 'Subscribing... please wait!';
     msg.textContent = '';
 
     try {
@@ -25,14 +25,14 @@ async function subscribeNewsletter() {
 
         if (res.ok) {
             msg.style.color = '#4ade80';
-            msg.textContent = '✓ You\'re subscribed! Thank you.';
+            msg.textContent = '✓ Subscription successful! Thank you.';
             input.value = '';
         } else if (res.status === 409) {
             msg.style.color = '#f66530';
-            msg.textContent = 'This email is already subscribed.';
+            msg.textContent = 'This email is already subscribed. Use a different email.';
         } else {
             msg.style.color = '#f66530';
-            msg.textContent = data.message || 'Something went wrong. Please try again.';
+            msg.textContent = data.message || 'Something went wrong. Please try again later.';
         }
 
     } catch (err) {

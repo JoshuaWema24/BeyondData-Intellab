@@ -11,20 +11,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    /* ===== SOCIAL ICONS ===== */
+    
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        background: #ffffff22;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: #fff;
+        flex-shrink: 0;
+    }
+</style>
 
 <body>
-
     <div class="menu-overlay" id="menuOverlay"></div>
-
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo-block">
-                <div class="logo-icon">
-                    <img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo">
-                </div>
-
+                <div class="logo-icon"><img src="Beyonddata intellab logo-Photoroom.png" alt="BeyondData Intellab Logo"></div>
             </a>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -33,51 +49,28 @@
                 <li><a href="opportunities.html">Opportunities</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-
-            <div class="nav-actions">
-                <a href="application.html" class="btn-nav-apply">Apply Now</a>
-            </div>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+            <div class="nav-actions"><a href="application.html" class="btn-nav-apply">Apply Now</a></div><button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button></div>
     </nav>
-
     <!-- MAIN APP FORM CONTENT -->
     <section class="section-padding" style="background-color: var(--bg-light);">
-        <div class="container" style="max-width: 900px; text-align: center;">
-            <span class="hero-badge" style="background: rgba(249, 115, 22, 0.1); color: var(--accent-orange);">Intake Open May 25th</span>
+        <div class="container" style="max-width: 900px; text-align: center;"><span class="hero-badge" style="background: rgba(249, 115, 22, 0.1); color: var(--accent-orange);">Intake Open May 25th</span>
             <h1 style="margin-top: 16px; margin-bottom: 12px;">Choose Your Application Path</h1>
             <p class="section-subtitle" style="margin-bottom: 40px;">Cohort 1 launch kicks off officially on June 15th, 2026. Select the option that best fits your intent.</p>
-
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
                 <div class="form-card" style="border-top: 4px solid var(--blue-tech); padding: 30px;">
                     <h3>Apply as a Mentee</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 25px;">Join the cohort to accelerate your growth and gain access to expert mentorship.</p>
-                    <a href="menteeAppform.html" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentee</a>
-                </div>
-
+                    <p style="font-size: 0.9rem; margin-bottom: 25px;">Join the cohort to accelerate your growth and gain access to expert mentorship.</p><a href="menteeAppform.html" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentee</a></div>
                 <div class="form-card" style="border-top: 4px solid var(--accent-orange); padding: 30px;">
                     <h3>Apply as a Mentor</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 25px;">Share your expertise and guide the next generation of African tech leaders.</p>
-                    <a href="mentorshipAppform.html" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentor</a>
-                </div>
-
+                    <p style="font-size: 0.9rem; margin-bottom: 25px;">Share your expertise and guide the next generation of African tech leaders.</p><a href="mentorshipAppform.html" target="_blank" class="btn btn-pill-gradient" style="display: block; padding: 14px; text-decoration: none; border-radius: 8px;">Register as Mentor</a></div>
             </div>
         </div>
     </section>
-
     <footer style="background-color: #054684; color: white; padding: 50px 20px; font-family: sans-serif;">
         <div class="footer-grid">
             <div style="flex: 1; min-width: 260px; max-width: 320px;">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                    <div class="logo-icon">
-                        <img src="25-Photoroom.png" alt="BeyondData Intellab Logo">
-                    </div>
+                    <div class="logo-icon"><img src="25-Photoroom.png" alt="BeyondData Intellab Logo"></div>
                 </div>
                 <p style="opacity: 0.8; max-width: 300px; line-height: 1.5;">Empowering Africa through digital intelligence, mentorship, and innovation. Building the next generation of tech leaders.</p>
                 <div class="social-icons">
@@ -99,23 +92,16 @@
             <div>
                 <h3 style="margin-top: 0; color: white;">Contact</h3>
                 <p style="opacity: 0.8;">✉ info@beyonddata.africa</p>
-                <p style="opacity: 0.8;">Mombasa, Kenya</p>
-                <button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button>
-            </div>
+                <p style="opacity: 0.8;">Mombasa, Kenya
+                </p><button style="background: #ffffff22; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Get in Touch</button></div>
         </div>
-
         <div style="max-width: 1200px; margin: 40px auto 0; border-top: 1px solid #ffffff22; padding-top: 40px;">
             <h3 style="margin-top: 0; color: white;">Stay Updated</h3>
             <p style="opacity: 0.8;">Subscribe to our newsletter for the latest updates and opportunities.</p>
-            <div class="newsletter-row">
-                <input type="email" id="newsletter-email" placeholder="Enter your email">
-                <button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
-            </div>
+            <div class="newsletter-row"><input type="email" id="newsletter-email" placeholder="Enter your email"><button style="background:#f66530" id="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button></div>
             <p id="newsletter-msg" style="margin-top: 10px; font-size: 14px; min-height: 18px;"></p>
         </div>
-
-        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">
-            &copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
+        <div style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2026 BEYONDDATAICT. All rights reserved. Building Africa's Digital Future.
         </div>
     </footer>
     <script src="script.js"></script>
@@ -132,7 +118,6 @@
 
         menuToggle.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
-
         // Pre-fill target role depending on incoming search params
         const urlParams = new URLSearchParams(window.location.search);
         const role = urlParams.get('role');
