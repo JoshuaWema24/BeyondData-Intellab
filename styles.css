@@ -150,7 +150,7 @@ h3 {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(15, 23, 42, 0.05);
     z-index: 1000;
-    padding: 16px 0;
+    padding: 7px 0;
     transition: var(--transition);
 }
 
@@ -179,10 +179,10 @@ h3 {
 }
 
 .logo-icon img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     /* Keeps the aspect ratio perfect */
-    width: 250px;
+    width: 200px;
     /* Adjust as needed for your header */
     display: block;
 }
