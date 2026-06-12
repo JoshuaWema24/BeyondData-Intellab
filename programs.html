@@ -174,6 +174,215 @@
             white-space: nowrap;
         }
     </style>
+    <style>
+        .tl-section-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tl-section-inner h2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: white;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+        
+        .tl-sub {
+            opacity: 0.75;
+            font-size: 1.05rem;
+            text-align: center;
+            margin: 0 0 52px;
+        }
+        
+        .tl-timeline {
+            position: relative;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        
+        .tl-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.18);
+            z-index: 0;
+        }
+        
+        .tl-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tl-item {
+            flex: 1;
+            min-width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 8px;
+        }
+        
+        .tl-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f66530;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-bottom: 16px;
+            box-shadow: 0 0 0 4px rgba(246, 101, 48, 0.2);
+        }
+        
+        .tl-dot svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .tl-date {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #f66530;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        
+        .tl-label {
+            font-size: 0.97rem;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        .tl-desc {
+            font-size: 0.82rem;
+            opacity: 0.65;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .phases-section-wrap {
+            background: #f5f7fa;
+            padding: 72px 24px;
+        }
+        
+        .phases-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .phases-inner h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #054684;
+            margin: 0 0 10px;
+            text-align: center;
+        }
+        
+        .phases-inner .ph-sub {
+            color: #666;
+            font-size: 1.05rem;
+            text-align: center;
+            margin: 0 0 44px;
+        }
+        
+        .phases-row-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+        
+        .phase-card {
+            background: white;
+            border: 1px solid #e0e6ef;
+            border-radius: 14px;
+            padding: 28px 26px;
+            flex: 1;
+            min-width: 210px;
+            max-width: 240px;
+        }
+        
+        .phase-num {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #aab;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+        
+        .phase-weeks {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #054684;
+            margin-bottom: 5px;
+        }
+        
+        .phase-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #f66530;
+            margin-bottom: 10px;
+        }
+        
+        .phase-desc {
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 600px) {
+            .tl-items {
+                flex-direction: column;
+                gap: 28px;
+                align-items: flex-start;
+            }
+            .tl-line {
+                display: none;
+            }
+            .tl-item {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 0;
+            }
+            .tl-dot {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .tl-item>div {
+                text-align: left;
+            }
+            .tl-date,
+            .tl-label,
+            .tl-desc {
+                text-align: left;
+            }
+            .phases-row-wrap {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .phase-card {
+                max-width: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -273,35 +482,111 @@
         </div>
     </section>
 
-    <section style="background-color: #054684; padding: 80px 20px; color: white;">
-        <div class="container" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 16px; color: white;">Program Timeline</h2>
-            <p style="opacity: 0.8; margin-bottom: 50px; font-size: 1.1rem;">Four phases designed to build skills progressively</p>
-            <div class="phases-row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 1</div>
-                    <h3 style="margin-bottom: 8px; color: white;">Weeks 1-2</h3>
-                    <h4 style="margin-bottom: 12px; color: #f66530;">Foundation</h4>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">Digital literacy, orientation, and goal setting</p>
+    <section style="background-color: #054684; padding: 72px 24px; color: white;">
+
+
+        <!-- SECTION 1: PROGRAM TIMELINE -->
+        <div class="tl-section-inner">
+            <h2>Program Timeline</h2>
+            <p class="tl-sub">Key dates for Cohort 1</p>
+            <div class="tl-timeline">
+                <div class="tl-line"></div>
+                <div class="tl-items">
+
+                    <div class="tl-item">
+                        <div class="tl-dot">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <div class="tl-date">June 15, 2026</div>
+                            <div class="tl-label">Info Session &amp; Applications Open</div>
+                            <div class="tl-desc">Attend the info session and submit your application</div>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <div class="tl-date">28th June, 2026</div>
+                            <div class="tl-label">End of Applications &amp; Applications Closes</div>
+                            <div class="tl-desc">Applications will close at the end of the day</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-dot">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.1 16.1l.91-.9a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                        </div>
+                        <div>
+                            <div class="tl-date">July 3, 2026</div>
+                            <div class="tl-label">Selected Applicants Contacted</div>
+                            <div class="tl-desc">Shortlisted candidates will be notified</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-dot">
+                            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <div>
+                            <div class="tl-date">August 28, 2026</div>
+                            <div class="tl-label">Cohort Ends</div>
+                            <div class="tl-desc">Final presentations and project submissions</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-dot">
+                            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                        </div>
+                        <div>
+                            <div class="tl-date">October 2026</div>
+                            <div class="tl-label">Graduation Ceremony</div>
+                            <div class="tl-desc">Celebrate completions and next steps</div>
+                        </div>
+                    </div>
+
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 2</div>
-                    <h3 style="margin-bottom: 8px; color: white;">Weeks 3-5</h3>
-                    <h4 style="margin-bottom: 12px; color: #f66530;">Skill Building</h4>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">AI tools, personal branding, and employability skills</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LEARNING PHASES -->
+    <section class="phases-section-wrap">
+        <div class="phases-inner">
+            <h2>Learning Phases</h2>
+            <p class="ph-sub">Four phases designed to build skills progressively</p>
+            <div class="phases-row-wrap">
+
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 1</div>
+                    <div class="phase-weeks">Weeks 1–2</div>
+                    <div class="phase-title">Foundation</div>
+                    <div class="phase-desc">Digital literacy, orientation, and goal setting</div>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 3</div>
-                    <h3 style="margin-bottom: 8px; color: white;">Weeks 6-7</h3>
-                    <h4 style="margin-bottom: 12px; color: #f66530;">Application</h4>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">Entrepreneurship, projects, and real-world practice</p>
+
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 2</div>
+                    <div class="phase-weeks">Weeks 3–5</div>
+                    <div class="phase-title">Skill Building</div>
+                    <div class="phase-desc">AI tools, personal branding, and employability skills</div>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; flex: 1; min-width: 220px; text-align: left; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 8px;">Phase 4</div>
-                    <h3 style="margin-bottom: 8px; color: white;">Week 8</h3>
-                    <h4 style="margin-bottom: 12px; color: #f66530;">Showcase</h4>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">Final presentations, networking, and next steps</p>
+
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 3</div>
+                    <div class="phase-weeks">Weeks 6–7</div>
+                    <div class="phase-title">Application</div>
+                    <div class="phase-desc">Entrepreneurship, projects, and real-world practice</div>
                 </div>
+
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 4</div>
+                    <div class="phase-weeks">Week 8</div>
+                    <div class="phase-title">Showcase</div>
+                    <div class="phase-desc">Final presentations, networking, and next steps</div>
+                </div>
+
             </div>
         </div>
     </section>
